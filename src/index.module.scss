@@ -1,0 +1,11 @@
+$font-color: green;
+
+/* index.css */
+div {
+  color: crimson;
+  font-size: 20px;
+}
+
+.hellowebpack {
+  color: $font-color;
+}
