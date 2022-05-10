@@ -54,7 +54,8 @@ const joinUrl = () => {
         }
     }, 1900);
 
-    location.replace(launchAppUrl);
+    // location.replace(launchAppUrl);
+    window.open(launchAppUrl);
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
@@ -76,3 +77,10 @@ document.addEventListener("blur", () => {
 document.addEventListener("focus", () => {
     text.textContent = "blur";
 });
+
+window.onblur = function () {
+    text.textContent = "onblur";
+};
+window.onfocus = function () {
+    text.textContent = "onfocus";
+};
