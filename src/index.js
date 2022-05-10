@@ -53,12 +53,15 @@ const joinUrl = () => {
         if (new Date() - openAt < 2000) {
             // location.replace(storeUrl);
             window.location = storeUrl;
-            alert(`${prevType}`);
+            text.textContent = prevType;
         }
     }, 1900);
 
     // location.replace(launchAppUrl);
     // window.open(launchAppUrl);
+    if (isIOS) {
+        prevType = "isIosFocus";
+    }
     window.location = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
@@ -86,7 +89,6 @@ document.addEventListener("focus", () => {
 
 window.onblur = function () {
     text.textContent = "onblur";
-    prevType = "blur";
     prevType = "onblur";
 };
 window.onfocus = function () {
