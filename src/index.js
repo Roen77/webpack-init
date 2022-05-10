@@ -115,13 +115,15 @@ const joinUrl = () => {
     // if (type !== "appurl") {
     //   window.location = storeUrl;
     // }
-    isClickChk = false;
-
-    console.log(document.visibilityState, "상태");
-    if (document.visibilityState === "visible") {
+    // isClickChk = false;
+    if (type !== "hidden") {
       return (window.location = storeUrl);
     }
-    console.log("type확인", type);
+    // console.log(document.visibilityState, "상태");
+    // if (document.visibilityState === "visible") {
+    //   return (window.location = storeUrl);
+    // }
+    // console.log("type확인", type);
   }, 1000);
   // const openAt = new Date();
   // window.confirm("ddd");
@@ -168,15 +170,23 @@ const joinUrl = () => {
 };
 
 document.addEventListener("visibilitychange", function () {
+  if (isClickChk) {
+    if (document.visibilityState === "hidden") {
+      type = "hidden";
+    } else {
+      type = "visible";
+    }
+  }
+
   //   alert("change");
   //   console.log(document.hidden);
   // 숨김 여부가 변했을 때의 행동
   //   text8.textContent = "변화감지" + `${Math.random()}`;
   //   text9.textContent = `${document.hidden}`;
   //   text10.textContent = `${document.visibilityState}`;
-  if (isClickChk) {
-    type = "appurl";
-  }
+  //   if (isClickChk) {
+  //     type = "appurl";
+  //   }
 });
 
 joinBtn.addEventListener("click", joinUrl);
