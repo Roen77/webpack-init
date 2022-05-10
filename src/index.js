@@ -50,20 +50,19 @@ const joinUrl = () => {
     // const openAt = new Date();
     // window.confirm("ddd");
 
-    // setTimeout(() => {
-    //     if (new Date() - openAt < 2000) {
-    //         // location.replace(storeUrl);
-    //         window.location = storeUrl;
-    //         text.textContent = prevType;
-    //     }
-    // }, 1900);
+    setTimeout(() => {
+        if (prevType !== "onblur") {
+            window.location = storeUrl;
+        }
+    }, 1900);
 
     // // location.replace(launchAppUrl);
-    window.open(launchAppUrl);
+    // window.open(launchAppUrl);
+    // window.open("https://naver.com");
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
+    window.location = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
@@ -99,3 +98,5 @@ window.onfocus = function () {
     //     $(document).trigger("blur");
     // }, 300);
 };
+
+console.log("onblur", prevType);
