@@ -44,6 +44,7 @@ const launchAppUrl = "bowling710://m.chilten.com";
 const text = document.querySelector(".text");
 const text2 = document.querySelector(".text2");
 const text3 = document.querySelector(".text3");
+const text4 = document.querySelector(".text4");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -53,6 +54,11 @@ const joinUrl = () => {
     // window.confirm("ddd");
 
     setTimeout(() => {
+        if (document.webkitHidden || document.hidden) {
+            text4.textContent = "hidden 작동됨";
+        } else {
+            text4.textContent = "hidden 작동안됨";
+        }
         text2.textContent = "setTImeout 실행됨";
         if (prevType !== "onblur") {
             window.location = storeUrl;
