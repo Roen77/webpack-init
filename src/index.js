@@ -54,6 +54,7 @@ const joinUrl = () => {
         if (prevType !== "onblur") {
             window.location = storeUrl;
         }
+        prevType = "";
     }, 1900);
 
     // // location.replace(launchAppUrl);
