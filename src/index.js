@@ -68,15 +68,24 @@ function intervalSch() {
 }
 
 const joinUrl = () => {
-    const openAt = new Date();
-
-    setTimeout(() => {
-        if (new Date() - openAt < 2000) {
-            location.replace(storeUrl);
-        }
-    }, 1900);
-
-    location.replace(launchAppUrl);
+    var now = new Date().valueOf();
+    setTimeout(function () {
+        if (new Date().valueOf() - now > 100) return;
+        window.location = storeUrl;
+    }, 25);
+    window.location = launchAppUrl;
 };
+
+// const joinUrl = () => {
+//     const openAt = new Date();
+
+//     setTimeout(() => {
+//         if (new Date() - openAt < 2000) {
+//             location.replace(storeUrl);
+//         }
+//     }, 1900);
+
+//     location.replace(launchAppUrl);
+// };
 
 joinBtn.addEventListener("click", joinUrl);
