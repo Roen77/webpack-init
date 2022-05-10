@@ -110,11 +110,11 @@ let type;
 const joinUrl = () => {
   isClickChk = true;
 
-  setTimeout(() => {
-    if (isClickChk && !Visibility.hidden()) {
-      return (window.location = storeUrl);
-    }
-  }, 3000);
+  //   setTimeout(() => {
+  //     if (isClickChk && !Visibility.hidden()) {
+  //       return (window.location = storeUrl);
+  //     }
+  //   }, 3000);
   //   setTimeout(() => {
   //     if (Visibility.state() === "visible") {
   //       return (window.location = storeUrl);
@@ -176,6 +176,9 @@ const joinUrl = () => {
   //     prevType = "isIosFocus";
   // }
   window.location = launchAppUrl;
+  if (isClickChk && !Visibility.hidden()) {
+    return (window.location = storeUrl);
+  }
 
   //   location.href = launchAppUrl;
 };
