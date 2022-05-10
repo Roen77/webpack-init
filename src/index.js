@@ -59,11 +59,11 @@ const joinUrl = () => {
     // }, 1900);
 
     // // location.replace(launchAppUrl);
-    // // window.open(launchAppUrl);
+    window.open(launchAppUrl);
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    window.location = launchAppUrl;
+    // window.location = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
