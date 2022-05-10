@@ -269,8 +269,8 @@ Visibility.change(function (e, state) {
 
   if (isClickChk) {
     isClickChk = false;
-    if (Visibility.state() === "visible") {
-      return (window.location = storeUrl);
-    }
+    // if (Visibility.state() === "visible") {
+    //   return (window.location = storeUrl);
+    // }
   }
 });
