@@ -58,12 +58,12 @@ const joinUrl = () => {
     }, 1000);
 
     // // location.replace(launchAppUrl);
-    window.open(launchAppUrl);
+    // window.open(launchAppUrl);
     // window.open("https://naver.com");
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
+    window.location = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
