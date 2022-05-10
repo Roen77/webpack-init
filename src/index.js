@@ -86,7 +86,7 @@ const joinUrl = () => {
   //       return (window.location = storeUrl);
   //     }
   //   }, 3000);
-  timer = setInterval(() => {
+  timer = setTimeout(() => {
     if (isClickChk && !Visibility.hidden()) {
       clearInterval(timer);
       return (window.location = storeUrl);
@@ -249,7 +249,7 @@ Visibility.change(function (e, state) {
   //   Statistics.visibilityChange(state);
   console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
   if (isClickChk && !Visibility.hidden()) {
-    clearInterval(timer);
+    clearTimeout(timer);
     text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
   }
 
