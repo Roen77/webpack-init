@@ -33,10 +33,12 @@ console.log(`production:${IS_PRODUCTION}`);
 console.log(` svg:${svg}`);
 
 const joinBtn = document.querySelector(".join_btn");
+const abtn1 = document.querySelector(".apple_btn1");
+const abtn2 = document.querySelector(".apple_btn2");
 // 앱 스키마 uri
 const launchAppUrl = "bowling710://m.chilten.com";
 const storeUrl = isIOS
-    ? "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
+    ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 let timer; // 타이머
@@ -68,24 +70,29 @@ function intervalSch() {
 }
 
 const joinUrl = () => {
-    var now = new Date().valueOf();
-    setTimeout(function () {
-        if (new Date().valueOf() - now > 100) return;
-        location.replace(storeUrl);
-    }, 25);
+    // console.log("click");
+    // 앱 실행(iOS인 경우)
+
     location.replace(launchAppUrl);
+
+    // 앱이 설치 되어있는지 체크
+
+    schInterval = setInterval(intervalSch, 500);
+
+    timer = setTimeout(function () {
+        // alert("앱이 설치되어있지 않습니다.");
+        location.replace(storeUrl);
+        clearInterval(schInterval);
+    }, 2000);
 };
 
-// const joinUrl = () => {
-//     const openAt = new Date();
-
-//     setTimeout(() => {
-//         if (new Date() - openAt < 2000) {
-//             location.replace(storeUrl);
-//         }
-//     }, 1900);
-
-//     location.replace(launchAppUrl);
-// };
-
 joinBtn.addEventListener("click", joinUrl);
+abtn1.addEventListener("click", () => {
+    console.log("click");
+    location.href = "https://itunes.apple.com/app/id1498707344";
+});
+abtn2.addEventListener("click", () => {
+    console.log("click");
+    location.href =
+        "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344";
+});
