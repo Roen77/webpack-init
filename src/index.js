@@ -5,7 +5,7 @@ import "normalize.css";
 // import "./index.css";
 import $ from "jquery";
 
-import Visibility from "visibilityjs";
+import Visibility, { Statistics } from "visibilityjs";
 
 // babel polyfill은 js파일에 불러와야한다.
 // index.js
@@ -48,10 +48,10 @@ const text = document.querySelector(".text");
 const text2 = document.querySelector(".text2");
 const text3 = document.querySelector(".text3");
 const text4 = document.querySelector(".text4");
-const text5 = document.querySelector(".text5");
-const text6 = document.querySelector(".text6");
-const text7 = document.querySelector(".text7");
-const text8 = document.querySelector(".text8");
+// const text5 = document.querySelector(".text5");
+// const text6 = document.querySelector(".text6");
+// const text7 = document.querySelector(".text7");
+// const text8 = document.querySelector(".text8");
 const storeUrl = isIOS
   ? "https://itunes.apple.com/app/id1498707344"
   : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -150,7 +150,7 @@ const joinUrl = () => {
 
   // location.replace(launchAppUrl);
   //   window.open(launchAppUrl);
-  // window.open("https://naver.com");
+  //   window.open("https://naver.com");
   // if (isIOS) {
   //     prevType = "isIosFocus";
   // }
@@ -226,35 +226,36 @@ document.addEventListener("mouseout", () => {
   }
 });
 
-$(window).on("blur", function () {
-  text5.textContent = " 제이쿼리blur";
-});
-$(window).on("focus", function () {
-  text6.textContent = " 제이쿼리포커스";
-});
+// $(window).on("blur", function () {
+//   text5.textContent = " 제이쿼리blur";
+// });
+// $(window).on("focus", function () {
+//   text6.textContent = " 제이쿼리포커스";
+// });
 
 console.log("onblur", prevType);
 console.log("상태좀", Visibility.state());
-if ("hidden" == Visibility.state()) {
-  text4.textContent = `${Visibility.state()}`;
-}
+// if ("hidden" == Visibility.state()) {
+//   text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
+// }
 if ("prerender" == Visibility.state()) {
   alert("prerender'");
 }
-if (Visibility.state() === "visible") {
-  text3.textContent = `${Visibility.state()}`;
-}
+// if (Visibility.state() === "visible") {
+//   text3.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
+// }
 
 Visibility.change(function (e, state) {
-  Statistics.visibilityChange(state);
-
-  if (isClickChk) {
-    isClickChk = false;
-
-    if (Visibility.state() === "visible") {
-      clearInterval(timer);
-    }
+  //   Statistics.visibilityChange(state);
+  console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
+  if (isClickChk && !Visibility.hidden()) {
+    clearInterval(timer);
+    text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
   }
+
+  //   if (isClickChk) {
+  //     isClickChk = false;
+  //   }
 });
 
 joinBtn.addEventListener("click", joinUrl);
