@@ -55,7 +55,16 @@ const storeUrl = isIOS
 const joinUrl = () => {
     // const openAt = new Date();
     // window.confirm("ddd");
-
+    setTimeout(() => {
+        if (document.webkitHidden || document.hidden) {
+            text4.textContent = "hidden 작동됨";
+        }
+        // text2.textContent = "setTImeout 실행됨";
+        // if (prevType !== "onblur") {
+        //     window.location = storeUrl;
+        // }
+        // prevType = "";
+    }, 1000);
     // if (isIOS) {
     //     //사파리 이외
     //     if (prev !== "blur") {
@@ -80,7 +89,9 @@ const joinUrl = () => {
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    window.location = launchAppUrl;
+    // window.location = launchAppUrl;
+
+    document.location.replace(launchAppUrl);
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
