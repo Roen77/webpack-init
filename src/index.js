@@ -5,6 +5,8 @@ import "normalize.css";
 // import "./index.css";
 import $ from "jquery";
 
+import Visibility from "visibilityjs";
+
 // babel polyfill은 js파일에 불러와야한다.
 // index.js
 import "@babel/polyfill";
@@ -177,7 +179,6 @@ document.addEventListener("visibilitychange", function () {
       type = "visible";
     }
   }
-
   //   alert("change");
   //   console.log(document.hidden);
   // 숨김 여부가 변했을 때의 행동
@@ -243,3 +244,13 @@ $(window).on("focus", function () {
 });
 
 console.log("onblur", prevType);
+console.log("상태좀", Visibility.state());
+if ("hidden" == Visibility.state()) {
+  text4.textContent = `${Visibility.state()}`;
+}
+if ("prerender" == Visibility.state()) {
+  alert("prerender'");
+}
+if ("visible" == Visibility.state()) {
+  text3.textContent = `${Visibility.state()}`;
+}
