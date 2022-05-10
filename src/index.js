@@ -129,7 +129,7 @@ const joinUrl = () => {
     //   return (window.location = storeUrl);
     // }
     // console.log("type확인", type);
-  }, 4000);
+  }, 1000);
   // const openAt = new Date();
   // window.confirm("ddd");
   //   setTimeout(() => {
