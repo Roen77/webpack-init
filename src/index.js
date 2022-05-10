@@ -54,7 +54,7 @@ const joinUrl = () => {
         }
     }, 1900);
 
-    location.href = launchAppUrl;
+    location.replace(launchAppUrl);
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
@@ -72,9 +72,6 @@ wopen.addEventListener("click", () => {
 
 document.addEventListener("blur", () => {
     text.textContent = "blur";
-});
-document.addEventListener("click", () => {
-    text.textContent = "click";
 });
 document.addEventListener("focus", () => {
     text.textContent = "blur";
