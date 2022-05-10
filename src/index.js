@@ -43,6 +43,7 @@ let prevType;
 const launchAppUrl = "bowling710://m.chilten.com";
 const text = document.querySelector(".text");
 const text2 = document.querySelector(".text2");
+const text3 = document.querySelector(".text3");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -104,5 +105,11 @@ window.onfocus = function () {
     //     $(document).trigger("blur");
     // }, 300);
 };
+
+document.addEventListener("mouseout", () => {
+    if (isIOS) {
+        text3.textContent = "ios 마우스 나감";
+    }
+});
 
 console.log("onblur", prevType);
