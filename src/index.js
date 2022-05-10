@@ -71,9 +71,10 @@ const joinUrl = () => {
     var now = new Date().valueOf();
     setTimeout(function () {
         if (new Date().valueOf() - now > 100) return;
-        window.location = storeUrl;
+        if (document.webkitHidden || document.hidden) return;
+        location.replace(storeUrl);
     }, 25);
-    window.location = launchAppUrl;
+    location.replace(launchAppUrl);
 };
 
 // const joinUrl = () => {
