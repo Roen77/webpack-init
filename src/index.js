@@ -68,21 +68,15 @@ function intervalSch() {
 }
 
 const joinUrl = () => {
-    // console.log("click");
-    // 앱 실행(iOS인 경우)
+    const openAt = new Date();
+
+    setTimeout(() => {
+        if (new Date() - openAt < 2000) {
+            location.replace(storeUrl);
+        }
+    }, 1900);
 
     location.href = launchAppUrl;
-
-    // 앱이 설치 되어있는지 체크
-
-    schInterval = setInterval(intervalSch, 200);
-
-    timer = setTimeout(function () {
-        // alert("앱이 설치되어있지 않습니다.");
-        location.href = storeUrl;
-        clearInterval(schInterval);
-    }, 800);
 };
 
-joinBtn.addEventListener("click", joinUrl);
 joinBtn.addEventListener("click", joinUrl);
