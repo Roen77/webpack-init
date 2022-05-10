@@ -91,6 +91,7 @@ const joinUrl = () => {
       clearInterval(timer);
       return (window.location = storeUrl);
     } else {
+      clearInterval(timer);
     }
   }, 3000);
   //   setTimeout(() => {
