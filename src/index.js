@@ -109,27 +109,27 @@ let isClickChk = false;
 let type;
 const joinUrl = () => {
   isClickChk = true;
-  setTimeout(() => {
-    if (Visibility.state() === "visible") {
-      return (window.location = storeUrl);
-    }
-    // if (document.webkitHidden || document.hidden) {
-    //   text4.textContent = "hidden 작동됨";
-    // }
-    // text2.textContent = "setTImeout 실행됨";
-    // // if (type !== "appurl") {
-    // //   window.location = storeUrl;
-    // // }
-    // // isClickChk = false;
-    // if (type !== "hidden") {
-    //   return (window.location = storeUrl);
-    // }
-    // console.log(document.visibilityState, "상태");
-    // if (document.visibilityState === "visible") {
-    //   return (window.location = storeUrl);
-    // }
-    // console.log("type확인", type);
-  }, 3000);
+  //   setTimeout(() => {
+  //     if (Visibility.state() === "visible") {
+  //       return (window.location = storeUrl);
+  //     }
+  // if (document.webkitHidden || document.hidden) {
+  //   text4.textContent = "hidden 작동됨";
+  // }
+  // text2.textContent = "setTImeout 실행됨";
+  // // if (type !== "appurl") {
+  // //   window.location = storeUrl;
+  // // }
+  // // isClickChk = false;
+  // if (type !== "hidden") {
+  //   return (window.location = storeUrl);
+  // }
+  // console.log(document.visibilityState, "상태");
+  // if (document.visibilityState === "visible") {
+  //   return (window.location = storeUrl);
+  // }
+  // console.log("type확인", type);
+  //   }, 3000);
   // const openAt = new Date();
   // window.confirm("ddd");
   //   setTimeout(() => {
@@ -260,4 +260,11 @@ if (Visibility.state() === "visible") {
 
 Visibility.change(function (e, state) {
   Statistics.visibilityChange(state);
+
+  if (isClickChk) {
+    isClickChk = false;
+    if (Visibility.state() === "visible") {
+      return (window.location = storeUrl);
+    }
+  }
 });
