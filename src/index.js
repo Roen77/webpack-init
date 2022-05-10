@@ -47,21 +47,22 @@ const storeUrl = isIOS
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 const joinUrl = () => {
-    const openAt = new Date();
+    // const openAt = new Date();
+    // window.confirm("ddd");
 
-    setTimeout(() => {
-        if (new Date() - openAt < 2000) {
-            // location.replace(storeUrl);
-            window.location = storeUrl;
-            text.textContent = prevType;
-        }
-    }, 1900);
+    // setTimeout(() => {
+    //     if (new Date() - openAt < 2000) {
+    //         // location.replace(storeUrl);
+    //         window.location = storeUrl;
+    //         text.textContent = prevType;
+    //     }
+    // }, 1900);
 
-    // location.replace(launchAppUrl);
-    // window.open(launchAppUrl);
-    if (isIOS) {
-        prevType = "isIosFocus";
-    }
+    // // location.replace(launchAppUrl);
+    // // window.open(launchAppUrl);
+    // if (isIOS) {
+    //     prevType = "isIosFocus";
+    // }
     window.location = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
@@ -78,20 +79,23 @@ wopen.addEventListener("click", () => {
     window.open("https://itunes.apple.com/app/id1498707344");
 });
 
-document.addEventListener("blur", () => {
-    text.textContent = "blur";
-    prevType = "blur";
-});
-document.addEventListener("focus", () => {
-    text.textContent = "focus";
-    prevType = "blur";
-});
+// document.addEventListener("blur", () => {
+//     text.textContent = "blur";
+//     prevType = "blur";
+// });
+// document.addEventListener("focus", () => {
+//     text.textContent = "focus";
+//     prevType = "blur";
+// });
 
 window.onblur = function () {
     text.textContent = "onblur";
     prevType = "onblur";
 };
 window.onfocus = function () {
-    text.textContent = "onfocus";
-    prevType = "onfocus";
+    // text.textContent = "onfocus";
+    // prevType = "onfocus";
+    // setTimeout(() => {
+    //     $(document).trigger("blur");
+    // }, 300);
 };
