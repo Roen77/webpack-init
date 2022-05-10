@@ -91,7 +91,7 @@ const joinUrl = () => {
     // }
     // window.location = launchAppUrl;
 
-    document.location.replace(launchAppUrl);
+    location.href = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
