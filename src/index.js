@@ -73,7 +73,7 @@ function clearTimer() {
 function intervalSch() {
     // 매 인터벌 마다 웹뷰가 활성화 인지 체크
 
-    if (document.webkitHidden || document.hidden) {
+    if (document.webkitHidden || document.hidden || document.msHidden) {
         // 웹뷰 비활성화
 
         clearTimer(); // 앱이 설치되어있을 경우 타이머 제거
@@ -87,9 +87,12 @@ function intervalSch() {
 }
 
 document.addEventListener("visibilitychange", function () {
+    alert("change");
     console.log(document.hidden);
     // 숨김 여부가 변했을 때의 행동
     text8.textContent = "변화감지" + `${Math.random()}`;
+    text9.textContent = `${document.hidden}`;
+    text10.textContent = `${document.visibilityState}`;
 });
 
 // $(".join_btn").click(function () {
