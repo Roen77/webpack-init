@@ -148,9 +148,9 @@ const joinUrl = () => {
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
+    window.location = launchAppUrl;
 
-    location.href = launchAppUrl;
+    // location.href = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
