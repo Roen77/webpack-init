@@ -86,19 +86,21 @@ function intervalSch() {
 }
 
 $(".join_btn").click(function () {
-    // 앱 실행(iOS인 경우)
-
-    location.href = launchAppUrl;
-
-    // 앱이 설치 되어있는지 체크
-
-    schInterval = setInterval(intervalSch, 500);
-
-    timer = setTimeout(function () {
-        alert("앱이 설치되어있지 않습니다.");
-
-        clearInterval(schInterval);
-    }, 2000);
+    if (location.href === launchAppUrl) {
+        alert("true");
+        console.log("true");
+    } else {
+        console.log("false");
+        alert("false");
+    }
+    // // 앱 실행(iOS인 경우)
+    // location.href = launchAppUrl;
+    // // 앱이 설치 되어있는지 체크
+    // schInterval = setInterval(intervalSch, 500);
+    // timer = setTimeout(function () {
+    //     alert("앱이 설치되어있지 않습니다.");
+    //     clearInterval(schInterval);
+    // }, 2000);
 });
 
 // const chk = () => {
