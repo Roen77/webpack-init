@@ -76,7 +76,7 @@ const joinUrl = () => {
         }
     }, 1900);
 
-    location.href = launchAppUrl;
+    location.replace(launchAppUrl);
 };
 
 joinBtn.addEventListener("click", joinUrl);
