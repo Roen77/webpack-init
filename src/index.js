@@ -112,10 +112,16 @@ const joinUrl = () => {
       text4.textContent = "hidden 작동됨";
     }
     text2.textContent = "setTImeout 실행됨";
-    if (type !== "appurl") {
-      window.location = storeUrl;
-    }
+    // if (type !== "appurl") {
+    //   window.location = storeUrl;
+    // }
     isClickChk = false;
+
+    console.log(document.visibilityState, "상태");
+    if (document.visibilityState === "visible") {
+      return (window.location = storeUrl);
+    }
+    console.log("type확인", type);
   }, 1000);
   // const openAt = new Date();
   // window.confirm("ddd");
@@ -163,7 +169,7 @@ const joinUrl = () => {
 
 document.addEventListener("visibilitychange", function () {
   //   alert("change");
-  console.log(document.hidden);
+  //   console.log(document.hidden);
   // 숨김 여부가 변했을 때의 행동
   //   text8.textContent = "변화감지" + `${Math.random()}`;
   //   text9.textContent = `${document.hidden}`;
