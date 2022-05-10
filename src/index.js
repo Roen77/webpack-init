@@ -36,7 +36,7 @@ const joinBtn = document.querySelector(".join_btn");
 // 앱 스키마 uri
 const launchAppUrl = "bowling710://m.chilten.com";
 const storeUrl = isIOS
-    ? "https://itunes.apple.com/app/id1498707344"
+    ? "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 let timer; // 타이머
