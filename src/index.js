@@ -39,12 +39,15 @@ const naver = document.querySelector(".naver");
 const wopen = document.querySelector(".wopen");
 
 let prevType;
+let answer;
 // 앱 스키마 uri
 const launchAppUrl = "bowling710://m.chilten.com";
 const text = document.querySelector(".text");
 const text2 = document.querySelector(".text2");
 const text3 = document.querySelector(".text3");
 const text4 = document.querySelector(".text4");
+const text5 = document.querySelector(".text5");
+const text6 = document.querySelector(".text6");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -53,16 +56,23 @@ const joinUrl = () => {
     // const openAt = new Date();
     // window.confirm("ddd");
 
-    setTimeout(() => {
-        if (document.webkitHidden || document.hidden) {
-            text4.textContent = "hidden 작동됨";
+    if (isIOS) {
+        //사파리 이외
+        if (prev !== "blur") {
+            $(document).trigger("blur");
         }
-        text2.textContent = "setTImeout 실행됨";
-        if (prevType !== "onblur") {
-            window.location = storeUrl;
-        }
-        prevType = "";
-    }, 1000);
+    } else {
+        setTimeout(() => {
+            if (document.webkitHidden || document.hidden) {
+                text4.textContent = "hidden 작동됨";
+            }
+            text2.textContent = "setTImeout 실행됨";
+            if (prevType !== "onblur") {
+                window.location = storeUrl;
+            }
+            prevType = "";
+        }, 1000);
+    }
 
     // // location.replace(launchAppUrl);
     // window.open(launchAppUrl);
@@ -114,6 +124,13 @@ document.addEventListener("mouseout", () => {
     if (isIOS) {
         text3.textContent = "ios 마우스 나감";
     }
+});
+
+$(window).on("blur", function () {
+    text5.textContent = " 제이쿼리blur";
+});
+$(window).on("focus", function () {
+    text6.textContent = " 제이쿼리포커스";
 });
 
 console.log("onblur", prevType);
