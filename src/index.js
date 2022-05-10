@@ -56,23 +56,23 @@ const joinUrl = () => {
     // const openAt = new Date();
     // window.confirm("ddd");
 
-    if (isIOS) {
-        //사파리 이외
-        if (prev !== "blur") {
-            $(document).trigger("blur");
-        }
-    } else {
-        setTimeout(() => {
-            if (document.webkitHidden || document.hidden) {
-                text4.textContent = "hidden 작동됨";
-            }
-            text2.textContent = "setTImeout 실행됨";
-            if (prevType !== "onblur") {
-                window.location = storeUrl;
-            }
-            prevType = "";
-        }, 1000);
-    }
+    // if (isIOS) {
+    //     //사파리 이외
+    //     if (prev !== "blur") {
+    //         $(document).trigger("blur");
+    //     }
+    // } else {
+    //     setTimeout(() => {
+    //         if (document.webkitHidden || document.hidden) {
+    //             text4.textContent = "hidden 작동됨";
+    //         }
+    //         text2.textContent = "setTImeout 실행됨";
+    //         if (prevType !== "onblur") {
+    //             window.location = storeUrl;
+    //         }
+    //         prevType = "";
+    //     }, 1000);
+    // }
 
     // // location.replace(launchAppUrl);
     // window.open(launchAppUrl);
