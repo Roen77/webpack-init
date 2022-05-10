@@ -93,7 +93,7 @@ const joinUrl = () => {
     } else {
       clearInterval(timer);
     }
-  }, 1900);
+  }, 2000);
   //   setTimeout(() => {
   //     if (Visibility.state() === "visible") {
   //       return (window.location = storeUrl);
