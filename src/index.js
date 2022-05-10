@@ -8,6 +8,7 @@ import $ from "jquery";
 // babel polyfill은 js파일에 불러와야한다.
 // index.js
 import "@babel/polyfill";
+import { isIOS } from "mobile-device-detect";
 
 // 모듈화하면 아래처럼 js파일에서 필요한 style태그의 내용을 불러올 수 있다.
 import styles from "./index.module.scss";
