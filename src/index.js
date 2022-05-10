@@ -109,6 +109,12 @@ let isClickChk = false;
 let type;
 const joinUrl = () => {
   isClickChk = true;
+
+  setTimeout(() => {
+    if (isClickChk) {
+      return (window.location = storeUrl);
+    }
+  }, 3000);
   //   setTimeout(() => {
   //     if (Visibility.state() === "visible") {
   //       return (window.location = storeUrl);
