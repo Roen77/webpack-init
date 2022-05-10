@@ -58,36 +58,6 @@ const storeUrl = isIOS
 
 // 앱 스키마 uri
 
-var timer; // 타이머
-
-var schInterval; // 인터벌
-
-// 인터벌, 타이머 삭제
-
-function clearTimer() {
-  clearInterval(schInterval);
-
-  clearTimeout(timer);
-}
-
-// 인터벌 마다 동작할 기능
-
-function intervalSch() {
-  // 매 인터벌 마다 웹뷰가 활성화 인지 체크
-
-  if (document.webkitHidden || document.hidden || document.msHidden) {
-    // 웹뷰 비활성화
-
-    clearTimer(); // 앱이 설치되어있을 경우 타이머 제거
-
-    alert("앱이 설치 되어 있습니다.");
-  } else {
-    // 웹뷰 활성화
-
-    console.log("타이머 동작");
-  }
-}
-
 // $(".join_btn").click(function () {
 //     // 앱 실행(iOS인 경우)
 //     location.href = launchAppUrl;
@@ -105,83 +75,83 @@ function intervalSch() {
 //     });
 // };
 
-let isClickChk = false;
-let type;
-const joinUrl = () => {
-  isClickChk = true;
+// let isClickChk = false;
+// let type;
+// const joinUrl = () => {
+//   isClickChk = true;
 
-  //   setTimeout(() => {
-  //     if (isClickChk && !Visibility.hidden()) {
-  //       return (window.location = storeUrl);
-  //     }
-  //   }, 3000);
-  //   setTimeout(() => {
-  //     if (Visibility.state() === "visible") {
-  //       return (window.location = storeUrl);
-  //     }
-  // if (document.webkitHidden || document.hidden) {
-  //   text4.textContent = "hidden 작동됨";
-  // }
-  // text2.textContent = "setTImeout 실행됨";
-  // // if (type !== "appurl") {
-  // //   window.location = storeUrl;
-  // // }
-  // // isClickChk = false;
-  // if (type !== "hidden") {
-  //   return (window.location = storeUrl);
-  // }
-  // console.log(document.visibilityState, "상태");
-  // if (document.visibilityState === "visible") {
-  //   return (window.location = storeUrl);
-  // }
-  // console.log("type확인", type);
-  //   }, 3000);
-  // const openAt = new Date();
-  // window.confirm("ddd");
-  //   setTimeout(() => {
-  //     console.log(location, window.history);
-  //     if (document.webkitHidden || document.hidden) {
-  //       text4.textContent = "hidden 작동됨";
-  //     }
-  //     // text2.textContent = "setTImeout 실행됨";
-  //     // if (prevType !== "onblur") {
-  //     //     window.location = storeUrl;
-  //     // }
-  //     // prevType = "";
+//   setTimeout(() => {
+//     if (isClickChk && !Visibility.hidden()) {
+//       return (window.location = storeUrl);
+//     }
+//   }, 3000);
+//   setTimeout(() => {
+//     if (Visibility.state() === "visible") {
+//       return (window.location = storeUrl);
+//     }
+// if (document.webkitHidden || document.hidden) {
+//   text4.textContent = "hidden 작동됨";
+// }
+// text2.textContent = "setTImeout 실행됨";
+// // if (type !== "appurl") {
+// //   window.location = storeUrl;
+// // }
+// // isClickChk = false;
+// if (type !== "hidden") {
+//   return (window.location = storeUrl);
+// }
+// console.log(document.visibilityState, "상태");
+// if (document.visibilityState === "visible") {
+//   return (window.location = storeUrl);
+// }
+// console.log("type확인", type);
+//   }, 3000);
+// const openAt = new Date();
+// window.confirm("ddd");
+//   setTimeout(() => {
+//     console.log(location, window.history);
+//     if (document.webkitHidden || document.hidden) {
+//       text4.textContent = "hidden 작동됨";
+//     }
+//     // text2.textContent = "setTImeout 실행됨";
+//     // if (prevType !== "onblur") {
+//     //     window.location = storeUrl;
+//     // }
+//     // prevType = "";
 
-  //     text7.textContent = `${JSON.stringify(history)}`;
-  //   }, 1000);
-  // if (isIOS) {
-  //     //사파리 이외
-  //     if (prev !== "blur") {
-  //         $(document).trigger("blur");
-  //     }
-  // } else {
-  //     setTimeout(() => {
-  //         if (document.webkitHidden || document.hidden) {
-  //             text4.textContent = "hidden 작동됨";
-  //         }
-  //         text2.textContent = "setTImeout 실행됨";
-  //         if (prevType !== "onblur") {
-  //             window.location = storeUrl;
-  //         }
-  //         prevType = "";
-  //     }, 1000);
-  // }
+//     text7.textContent = `${JSON.stringify(history)}`;
+//   }, 1000);
+// if (isIOS) {
+//     //사파리 이외
+//     if (prev !== "blur") {
+//         $(document).trigger("blur");
+//     }
+// } else {
+//     setTimeout(() => {
+//         if (document.webkitHidden || document.hidden) {
+//             text4.textContent = "hidden 작동됨";
+//         }
+//         text2.textContent = "setTImeout 실행됨";
+//         if (prevType !== "onblur") {
+//             window.location = storeUrl;
+//         }
+//         prevType = "";
+//     }, 1000);
+// }
 
-  // location.replace(launchAppUrl);
-  //   window.open(launchAppUrl);
-  // window.open("https://naver.com");
-  // if (isIOS) {
-  //     prevType = "isIosFocus";
-  // }
-  window.location = launchAppUrl;
-  if (isClickChk && !Visibility.hidden()) {
-    return (window.location = storeUrl);
-  }
+// location.replace(launchAppUrl);
+//   window.open(launchAppUrl);
+// window.open("https://naver.com");
+// if (isIOS) {
+//     prevType = "isIosFocus";
+// }
+//   window.location = launchAppUrl;
+//   if (isClickChk && !Visibility.hidden()) {
+//     return (window.location = storeUrl);
+//   }
 
-  //   location.href = launchAppUrl;
-};
+//   //   location.href = launchAppUrl;
+// };
 
 document.addEventListener("visibilitychange", function () {
   if (isClickChk) {
@@ -202,7 +172,6 @@ document.addEventListener("visibilitychange", function () {
   //   }
 });
 
-joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
   location.replace("https://itunes.apple.com/app/id1498707344");
 });
@@ -277,3 +246,50 @@ Visibility.change(function (e, state) {
     // }
   }
 });
+
+let timer; // 타이머
+
+let schInterval; // 인터벌
+
+// 인터벌, 타이머 삭제
+
+function clearTimer() {
+  clearInterval(schInterval);
+
+  clearTimeout(timer);
+}
+
+// 인터벌 마다 동작할 기능
+
+function intervalSch() {
+  // 매 인터벌 마다 웹뷰가 활성화 인지 체크
+
+  if (Visibility.hidden()) {
+    // 웹뷰 비활성화
+
+    clearTimer(); // 앱이 설치되어있을 경우 타이머 제거
+    // alert("앱이 설치 되어 있습니다.");
+  } else {
+    // 웹뷰 활성화
+    // console.log("타이머 동작");
+  }
+}
+
+const joinUrl = () => {
+  // console.log("click");
+  // 앱 실행(iOS인 경우)
+
+  location.href = launchAppUrl;
+
+  // 앱이 설치 되어있는지 체크
+
+  schInterval = setInterval(intervalSch, 500);
+
+  timer = setTimeout(function () {
+    // alert("앱이 설치되어있지 않습니다.");
+    location.href = storeUrl;
+    clearInterval(schInterval);
+  }, 2000);
+};
+
+joinBtn.addEventListener("click", joinUrl);
