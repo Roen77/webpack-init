@@ -48,14 +48,21 @@ const text3 = document.querySelector(".text3");
 const text4 = document.querySelector(".text4");
 const text5 = document.querySelector(".text5");
 const text6 = document.querySelector(".text6");
+const text7 = document.querySelector(".text7");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
+const chk = () => {
+    return new Promise(res => {
+        location.href = launchAppUrl;
+    });
+};
 const joinUrl = () => {
     // const openAt = new Date();
     // window.confirm("ddd");
     setTimeout(() => {
+        console.log(location, window.history);
         if (document.webkitHidden || document.hidden) {
             text4.textContent = "hidden 작동됨";
         }
@@ -64,6 +71,8 @@ const joinUrl = () => {
         //     window.location = storeUrl;
         // }
         // prevType = "";
+
+        text7.textContent = `${JSON.stringify(history)}`;
     }, 1000);
     // if (isIOS) {
     //     //사파리 이외
@@ -83,7 +92,7 @@ const joinUrl = () => {
     //     }, 1000);
     // }
 
-    // // location.replace(launchAppUrl);
+    // location.replace(launchAppUrl);
     // window.open(launchAppUrl);
     // window.open("https://naver.com");
     // if (isIOS) {
@@ -124,6 +133,8 @@ window.onfocus = function () {
     if (prevType === "onblur") {
         prevType = "";
     }
+    text6.textContent = "focus";
+    prevType = "focus";
     // text.textContent = "onfocus";
     // prevType = "onfocus";
     // setTimeout(() => {
