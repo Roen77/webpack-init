@@ -42,6 +42,7 @@ let prevType;
 // 앱 스키마 uri
 const launchAppUrl = "bowling710://m.chilten.com";
 const text = document.querySelector(".text");
+const text2 = document.querySelector(".text2");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -51,6 +52,7 @@ const joinUrl = () => {
     // window.confirm("ddd");
 
     setTimeout(() => {
+        text2.textContent = "setTImeout 실행됨";
         if (prevType !== "onblur") {
             window.location = storeUrl;
         }
@@ -93,7 +95,7 @@ window.onblur = function () {
     prevType = "onblur";
 };
 window.onfocus = function () {
-    if (prevType !== "onblur") {
+    if (prevType === "onblur") {
         prevType = "";
     }
     // text.textContent = "onfocus";
