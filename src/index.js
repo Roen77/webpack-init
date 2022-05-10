@@ -129,7 +129,7 @@ const joinUrl = () => {
     //   return (window.location = storeUrl);
     // }
     // console.log("type확인", type);
-  }, 1000);
+  }, 4000);
   // const openAt = new Date();
   // window.confirm("ddd");
   //   setTimeout(() => {
@@ -254,6 +254,10 @@ if ("hidden" == Visibility.state()) {
 if ("prerender" == Visibility.state()) {
   alert("prerender'");
 }
-if ("visible" == Visibility.state()) {
+if (Visibility.state() === "visible") {
   text3.textContent = `${Visibility.state()}`;
 }
+
+Visibility.change(function (e, state) {
+  Statistics.visibilityChange(state);
+});
