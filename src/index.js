@@ -111,7 +111,7 @@ const joinUrl = () => {
   isClickChk = true;
 
   setTimeout(() => {
-    if (isClickChk) {
+    if (isClickChk && !Visibility.hidden()) {
       return (window.location = storeUrl);
     }
   }, 3000);
