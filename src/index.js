@@ -110,17 +110,20 @@ let type;
 const joinUrl = () => {
   isClickChk = true;
   setTimeout(() => {
-    if (document.webkitHidden || document.hidden) {
-      text4.textContent = "hidden 작동됨";
-    }
-    text2.textContent = "setTImeout 실행됨";
-    // if (type !== "appurl") {
-    //   window.location = storeUrl;
-    // }
-    // isClickChk = false;
-    if (type !== "hidden") {
+    if (Visibility.state() === "visible") {
       return (window.location = storeUrl);
     }
+    // if (document.webkitHidden || document.hidden) {
+    //   text4.textContent = "hidden 작동됨";
+    // }
+    // text2.textContent = "setTImeout 실행됨";
+    // // if (type !== "appurl") {
+    // //   window.location = storeUrl;
+    // // }
+    // // isClickChk = false;
+    // if (type !== "hidden") {
+    //   return (window.location = storeUrl);
+    // }
     // console.log(document.visibilityState, "상태");
     // if (document.visibilityState === "visible") {
     //   return (window.location = storeUrl);
@@ -166,9 +169,9 @@ const joinUrl = () => {
   // if (isIOS) {
   //     prevType = "isIosFocus";
   // }
-  //   window.location = launchAppUrl;
+  window.location = launchAppUrl;
 
-  location.href = launchAppUrl;
+  //   location.href = launchAppUrl;
 };
 
 document.addEventListener("visibilitychange", function () {
