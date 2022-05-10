@@ -49,6 +49,7 @@ const text4 = document.querySelector(".text4");
 const text5 = document.querySelector(".text5");
 const text6 = document.querySelector(".text6");
 const text7 = document.querySelector(".text7");
+const text8 = document.querySelector(".text8");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -85,124 +86,123 @@ function intervalSch() {
     }
 }
 
-$(".join_btn").click(function () {
-    if (location.href === launchAppUrl) {
-        alert("true");
-        console.log("true");
-    } else {
-        console.log("false");
-        alert("false");
-    }
-    // // 앱 실행(iOS인 경우)
-    // location.href = launchAppUrl;
-    // // 앱이 설치 되어있는지 체크
-    // schInterval = setInterval(intervalSch, 500);
-    // timer = setTimeout(function () {
-    //     alert("앱이 설치되어있지 않습니다.");
-    //     clearInterval(schInterval);
-    // }, 2000);
+document.addEventListener("visibilitychange", function () {
+    console.log(document.hidden);
+    // 숨김 여부가 변했을 때의 행동
+    text8.textContent = "변화감지" + `${Math.random()}`;
 });
+
+// $(".join_btn").click(function () {
+//     // 앱 실행(iOS인 경우)
+//     location.href = launchAppUrl;
+//     // 앱이 설치 되어있는지 체크
+//     schInterval = setInterval(intervalSch, 500);
+//     timer = setTimeout(function () {
+//         alert("앱이 설치되어있지 않습니다.");
+//         clearInterval(schInterval);
+//     }, 2000);
+// });
 
 // const chk = () => {
 //     return new Promise(res => {
 //         location.href = launchAppUrl;
 //     });
 // };
-// const joinUrl = () => {
-//     // const openAt = new Date();
-//     // window.confirm("ddd");
-//     setTimeout(() => {
-//         console.log(location, window.history);
-//         if (document.webkitHidden || document.hidden) {
-//             text4.textContent = "hidden 작동됨";
-//         }
-//         // text2.textContent = "setTImeout 실행됨";
-//         // if (prevType !== "onblur") {
-//         //     window.location = storeUrl;
-//         // }
-//         // prevType = "";
+const joinUrl = () => {
+    // const openAt = new Date();
+    // window.confirm("ddd");
+    setTimeout(() => {
+        console.log(location, window.history);
+        if (document.webkitHidden || document.hidden) {
+            text4.textContent = "hidden 작동됨";
+        }
+        // text2.textContent = "setTImeout 실행됨";
+        // if (prevType !== "onblur") {
+        //     window.location = storeUrl;
+        // }
+        // prevType = "";
 
-//         text7.textContent = `${JSON.stringify(history)}`;
-//     }, 1000);
-//     // if (isIOS) {
-//     //     //사파리 이외
-//     //     if (prev !== "blur") {
-//     //         $(document).trigger("blur");
-//     //     }
-//     // } else {
-//     //     setTimeout(() => {
-//     //         if (document.webkitHidden || document.hidden) {
-//     //             text4.textContent = "hidden 작동됨";
-//     //         }
-//     //         text2.textContent = "setTImeout 실행됨";
-//     //         if (prevType !== "onblur") {
-//     //             window.location = storeUrl;
-//     //         }
-//     //         prevType = "";
-//     //     }, 1000);
-//     // }
+        text7.textContent = `${JSON.stringify(history)}`;
+    }, 1000);
+    // if (isIOS) {
+    //     //사파리 이외
+    //     if (prev !== "blur") {
+    //         $(document).trigger("blur");
+    //     }
+    // } else {
+    //     setTimeout(() => {
+    //         if (document.webkitHidden || document.hidden) {
+    //             text4.textContent = "hidden 작동됨";
+    //         }
+    //         text2.textContent = "setTImeout 실행됨";
+    //         if (prevType !== "onblur") {
+    //             window.location = storeUrl;
+    //         }
+    //         prevType = "";
+    //     }, 1000);
+    // }
 
-//     // location.replace(launchAppUrl);
-//     // window.open(launchAppUrl);
-//     // window.open("https://naver.com");
-//     // if (isIOS) {
-//     //     prevType = "isIosFocus";
-//     // }
-//     // window.location = launchAppUrl;
+    // location.replace(launchAppUrl);
+    // window.open(launchAppUrl);
+    // window.open("https://naver.com");
+    // if (isIOS) {
+    //     prevType = "isIosFocus";
+    // }
+    // window.location = launchAppUrl;
 
-//     location.href = launchAppUrl;
-// };
-// joinBtn.addEventListener("click", joinUrl);
-// aBtn1.addEventListener("click", () => {
-//     location.replace("https://itunes.apple.com/app/id1498707344");
+    location.href = launchAppUrl;
+};
+joinBtn.addEventListener("click", joinUrl);
+aBtn1.addEventListener("click", () => {
+    location.replace("https://itunes.apple.com/app/id1498707344");
+});
+aBtn2.addEventListener("click", () => {
+    location.replace("https://itunes.apple.com/app/id1498707344");
+});
+naver.addEventListener("click", () => {
+    location.replace("https://www.naver.com/");
+});
+wopen.addEventListener("click", () => {
+    window.open("https://itunes.apple.com/app/id1498707344");
+});
+
+// document.addEventListener("blur", () => {
+//     text.textContent = "blur";
+//     prevType = "blur";
 // });
-// aBtn2.addEventListener("click", () => {
-//     location.replace("https://itunes.apple.com/app/id1498707344");
-// });
-// naver.addEventListener("click", () => {
-//     location.replace("https://www.naver.com/");
-// });
-// wopen.addEventListener("click", () => {
-//     window.open("https://itunes.apple.com/app/id1498707344");
-// });
-
-// // document.addEventListener("blur", () => {
-// //     text.textContent = "blur";
-// //     prevType = "blur";
-// // });
-// // document.addEventListener("focus", () => {
-// //     text.textContent = "focus";
-// //     prevType = "blur";
-// // });
-
-// window.onblur = function () {
-//     text.textContent = "onblur";
-//     prevType = "onblur";
-// };
-// window.onfocus = function () {
-//     if (prevType === "onblur") {
-//         prevType = "";
-//     }
-//     text6.textContent = "focus";
-//     prevType = "focus";
-//     // text.textContent = "onfocus";
-//     // prevType = "onfocus";
-//     // setTimeout(() => {
-//     //     $(document).trigger("blur");
-//     // }, 300);
-// };
-
-// document.addEventListener("mouseout", () => {
-//     if (isIOS) {
-//         text3.textContent = "ios 마우스 나감";
-//     }
+// document.addEventListener("focus", () => {
+//     text.textContent = "focus";
+//     prevType = "blur";
 // });
 
-// $(window).on("blur", function () {
-//     text5.textContent = " 제이쿼리blur";
-// });
-// $(window).on("focus", function () {
-//     text6.textContent = " 제이쿼리포커스";
-// });
+window.onblur = function () {
+    text.textContent = "onblur";
+    prevType = "onblur";
+};
+window.onfocus = function () {
+    if (prevType === "onblur") {
+        prevType = "";
+    }
+    text6.textContent = "focus";
+    prevType = "focus";
+    // text.textContent = "onfocus";
+    // prevType = "onfocus";
+    // setTimeout(() => {
+    //     $(document).trigger("blur");
+    // }, 300);
+};
 
-// console.log("onblur", prevType);
+document.addEventListener("mouseout", () => {
+    if (isIOS) {
+        text3.textContent = "ios 마우스 나감";
+    }
+});
+
+$(window).on("blur", function () {
+    text5.textContent = " 제이쿼리blur";
+});
+$(window).on("focus", function () {
+    text6.textContent = " 제이쿼리포커스";
+});
+
+console.log("onblur", prevType);
