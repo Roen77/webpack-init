@@ -250,9 +250,10 @@ Visibility.change(function (e, state) {
 
   if (isClickChk) {
     isClickChk = false;
-  }
 
-  if (Visibility.state() === "visible") {
+    if (Visibility.state() === "visible") {
+      clearInterval(timer);
+    }
   }
 });
 
