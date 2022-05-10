@@ -270,6 +270,7 @@ function intervalSch() {
     clearTimer(); // 앱이 설치되어있을 경우 타이머 제거
     // alert("앱이 설치 되어 있습니다.");
   } else {
+    location.href = storeUrl;
     // 웹뷰 활성화
     // console.log("타이머 동작");
   }
@@ -287,7 +288,6 @@ const joinUrl = () => {
 
   timer = setTimeout(function () {
     // alert("앱이 설치되어있지 않습니다.");
-    location.href = storeUrl;
     clearInterval(schInterval);
   }, 2000);
 };
