@@ -38,6 +38,7 @@ const aBtn2 = document.querySelector(".apple_btn2");
 const naver = document.querySelector(".naver");
 const wopen = document.querySelector(".wopen");
 
+let prevType;
 // 앱 스키마 uri
 const launchAppUrl = "bowling710://m.chilten.com";
 const text = document.querySelector(".text");
@@ -50,12 +51,15 @@ const joinUrl = () => {
 
     setTimeout(() => {
         if (new Date() - openAt < 2000) {
-            location.replace(storeUrl);
+            // location.replace(storeUrl);
+            window.location = storeUrl;
+            alert(`${prevType}`);
         }
     }, 1900);
 
     // location.replace(launchAppUrl);
-    window.open(launchAppUrl);
+    // window.open(launchAppUrl);
+    window.location = launchAppUrl;
 };
 joinBtn.addEventListener("click", joinUrl);
 aBtn1.addEventListener("click", () => {
@@ -73,14 +77,19 @@ wopen.addEventListener("click", () => {
 
 document.addEventListener("blur", () => {
     text.textContent = "blur";
+    prevType = "blur";
 });
 document.addEventListener("focus", () => {
-    text.textContent = "blur";
+    text.textContent = "focus";
+    prevType = "blur";
 });
 
 window.onblur = function () {
     text.textContent = "onblur";
+    prevType = "blur";
+    prevType = "onblur";
 };
 window.onfocus = function () {
     text.textContent = "onfocus";
+    prevType = "onfocus";
 };
