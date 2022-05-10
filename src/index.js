@@ -56,8 +56,6 @@ const joinUrl = () => {
     setTimeout(() => {
         if (document.webkitHidden || document.hidden) {
             text4.textContent = "hidden 작동됨";
-        } else {
-            text4.textContent = "hidden 작동안됨";
         }
         text2.textContent = "setTImeout 실행됨";
         if (prevType !== "onblur") {
