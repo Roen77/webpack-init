@@ -165,7 +165,6 @@ const joinUrl = () => {
     //     prevType = "isIosFocus";
     // }
     window.location = launchAppUrl;
-    text10.textContent = `${window.opener?.document.frm1.txtSender.value}`;
     //   if (isClickChk && !Visibility.hidden()) {
     //     return (window.location = storeUrl);
     //   }
@@ -264,7 +263,6 @@ if ("prerender" == Visibility.state()) {
 
 Visibility.change(function (e, state) {
     //   Statistics.visibilityChange(state);
-    console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
     text4.textContent = `보여지는상태:${Visibility.state()} 클릭여부체크는 ${isClickChk}`;
     if (isClickChk && !Visibility.hidden()) {
         text5.textContent = `클리어 여부 ${Math.ceil(Math.random() * 100)}`;
