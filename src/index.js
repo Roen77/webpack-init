@@ -13,7 +13,7 @@ import "@babel/polyfill";
 
 // 모듈화하면 아래처럼 js파일에서 필요한 style태그의 내용을 불러올 수 있다.
 import styles from "./index.module.scss";
-import { isIOS } from "mobile-device-detect";
+import { isIOS, isMobileSafari } from "mobile-device-detect";
 import andImg from "./images/and.png";
 import svg from "./images/11.svg";
 function component() {
@@ -57,6 +57,9 @@ const text9 = document.querySelector(".text9");
 const text10 = document.querySelector(".text10");
 const text11 = document.querySelector(".text11");
 const text13 = document.querySelector(".text13");
+const text14 = document.querySelector(".text14");
+
+text14.textContent = `${isMobileSafari}`;
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -92,16 +95,19 @@ const joinUrl = () => {
     //       return (window.location = storeUrl);
     //     }
     //   }, 3000);
-    // timer = setTimeout(() => {
-    //     text9.textContent = `${opener && opener.closed}`;
-    //     if (isClickChk && !Visibility.hidden()) {
-    //         clearTimeout(timer);
-    //         return location.replace(storeUrl);
-    //         // return (window.location = storeUrl);
-    //     } else {
-    //         clearTimeout(timer);
-    //     }
-    // }, 2200);
+    timer = setTimeout(() => {
+        text9.textContent = `${opener && opener.closed}`;
+        if (isMobileSafari && isClickChk && prevType === "onblur") {
+            return clearTimeout(timer);
+        }
+        if (isClickChk && !Visibility.hidden()) {
+            clearTimeout(timer);
+            return location.replace(storeUrl);
+            // return (window.location = storeUrl);
+        } else {
+            clearTimeout(timer);
+        }
+    }, 2200);
     //   setTimeout(() => {
     //     if (Visibility.state() === "visible") {
     //       return (window.location = storeUrl);
@@ -226,11 +232,14 @@ hrefbrn.addEventListener("click", () => {
 // });
 
 window.onblur = function () {
-    text6.textContent = "onblur";
-    prevType = "onblur";
+    if (isMobileSafari) {
+        text6.textContent = "onblur";
+        prevType = "onblur";
+    }
 };
 window.onfocus = function () {
-    if (prevType === "onblur") {
+    if (isMobileSafari) {
+        text6.textContent = "onfocus";
         prevType = "";
     }
     // text6.textContent = "focus";
