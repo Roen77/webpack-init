@@ -205,14 +205,17 @@ const joinUrl = () => {
   //     })
   //     .catch((err) => console.log("err", err));
 
-  window.location = launchAppUrl;
+  //   window.location = launchAppUrl;
+  console.log("slef", self);
+  self.alert("Aa");
+  self.confirm("Addd");
 
   //   const popup = window.open(launchAppUrl);
   //   if (!popup) {
   //     text15.textContent = `유효하지 않다`;
   //   }
 };
-
+console.log(self.alert(), "dd");
 // console.log("opener 밖의내용", opend);
 
 // document.addEventListener("visibilitychange", function () {
@@ -261,7 +264,7 @@ const joinUrl = () => {
 //     text.textContent = "focus";
 //     prevType = "blur";
 // });
-
+alert("aa");
 window.onblur = function () {
   if (isMobileSafari) {
     self.close();
