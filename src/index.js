@@ -86,12 +86,12 @@ const joinUrl = () => {
     //       return (window.location = storeUrl);
     //     }
     //   }, 3000);
-    timer = setTimeout(() => {
+    timer = setInterval(() => {
         if (isClickChk && !Visibility.hidden()) {
-            clearTimeout(timer);
+            clearInterval(timer);
             return location.replace(storeUrl);
         } else {
-            clearTimeout(timer);
+            clearInterval(timer);
         }
     }, 2000);
     //   setTimeout(() => {
@@ -249,7 +249,7 @@ Visibility.change(function (e, state) {
     //   Statistics.visibilityChange(state);
     console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
     if (isClickChk && !Visibility.hidden()) {
-        clearTimeout(timer);
+        clearInterval(timer);
         text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
     }
 
