@@ -239,7 +239,7 @@ window.onblur = function () {
 };
 window.onfocus = function () {
     if (isMobileSafari) {
-        text6.textContent = "onfocus";
+        text8.textContent = "onfocus";
         prevType = "";
     }
     // text6.textContent = "focus";
