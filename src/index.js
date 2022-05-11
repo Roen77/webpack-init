@@ -39,6 +39,7 @@ const aBtn1 = document.querySelector(".apple_btn1");
 const aBtn2 = document.querySelector(".apple_btn2");
 const naver = document.querySelector(".naver");
 const wopen = document.querySelector(".wopen");
+const hrefbrn = document.querySelector(".href");
 
 let prevType;
 let answer;
@@ -90,16 +91,16 @@ const joinUrl = () => {
     //       return (window.location = storeUrl);
     //     }
     //   }, 3000);
-    timer = setTimeout(() => {
-        text9.textContent = `${opener && opener.closed}`;
-        if (isClickChk && !Visibility.hidden()) {
-            clearTimeout(timer);
-            return location.replace(storeUrl);
-            // return (window.location = storeUrl);
-        } else {
-            clearTimeout(timer);
-        }
-    }, 2200);
+    // timer = setTimeout(() => {
+    //     text9.textContent = `${opener && opener.closed}`;
+    //     if (isClickChk && !Visibility.hidden()) {
+    //         clearTimeout(timer);
+    //         return location.replace(storeUrl);
+    //         // return (window.location = storeUrl);
+    //     } else {
+    //         clearTimeout(timer);
+    //     }
+    // }, 2200);
     //   setTimeout(() => {
     //     if (Visibility.state() === "visible") {
     //       return (window.location = storeUrl);
@@ -164,8 +165,8 @@ const joinUrl = () => {
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
-    location.replace(launchAppUrl);
+    window.location = launchAppUrl;
+    // location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
     //     return (window.location = storeUrl);
     //   }
@@ -205,6 +206,9 @@ naver.addEventListener("click", () => {
 });
 wopen.addEventListener("click", () => {
     window.open("https://itunes.apple.com/app/id1498707344");
+});
+hrefbrn.addEventListener("click", () => {
+    location.href = "https://www.naver.com/";
 });
 
 // document.addEventListener("blur", () => {
