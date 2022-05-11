@@ -52,6 +52,7 @@ const text5 = document.querySelector(".text5");
 const text6 = document.querySelector(".text6");
 const text7 = document.querySelector(".text7");
 const text8 = document.querySelector(".text8");
+const text9 = document.querySelector(".text9");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -87,6 +88,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setInterval(() => {
+        text9.textContent = `${opener && opener.closed}`;
         if (isClickChk && !Visibility.hidden()) {
             clearInterval(timer);
             return location.replace(storeUrl);
@@ -163,6 +165,8 @@ const joinUrl = () => {
     //   location.href = launchAppUrl;
 };
 
+console.log("opener", opener && opener.closed);
+
 // document.addEventListener("visibilitychange", function () {
 //     if (isClickChk) {
 //         if (document.visibilityState === "hidden") {
@@ -221,9 +225,9 @@ window.onfocus = function () {
     // }, 300);
 };
 
-document.addEventListener("focusout", () => {
-    text8.textContent = "focusout";
-});
+// document.addEventListener("focusout", () => {
+//     text8.textContent = "focusout";
+// });
 
 document.addEventListener("mouseout", () => {
     if (isIOS) {
@@ -234,9 +238,9 @@ document.addEventListener("mouseout", () => {
 $(window).on("blur", function () {
     text7.textContent = " 제이쿼리blur";
 });
-// $(window).on("focus", function () {
-//   text6.textContent = " 제이쿼리포커스";
-// });
+$(window).on("focusout", function () {
+    text8.textContent = "focusout";
+});
 
 console.log("onblur", prevType);
 console.log("상태좀", Visibility.state());
