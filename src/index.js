@@ -181,12 +181,11 @@ const joinUrl = () => {
   //   }
   // console.log("opener 안의내용", opend);
   //   location.href = launchAppUrl;
-  const popup = window.open();
-  popup.location = launchAppUrl;
-  //   const popup = window.open(launchAppUrl);
-  //   if (!popup) {
-  //     text15.textContent = `유효하지 않다`;
-  //   }
+
+  const popup = window.open(launchAppUrl);
+  if (!popup) {
+    text15.textContent = `유효하지 않다`;
+  }
 };
 
 // console.log("opener 밖의내용", opend);
