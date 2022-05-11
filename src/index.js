@@ -53,6 +53,8 @@ const text6 = document.querySelector(".text6");
 const text7 = document.querySelector(".text7");
 const text8 = document.querySelector(".text8");
 const text9 = document.querySelector(".text9");
+const text10 = document.querySelector(".text10");
+const text11 = document.querySelector(".text11");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -77,6 +79,7 @@ const chk = () => {
 };
 
 let isClickChk = false;
+const opend = window.opener;
 let type;
 let timer;
 const joinUrl = () => {
@@ -153,19 +156,24 @@ const joinUrl = () => {
 
     // location.replace(launchAppUrl);
     //   window.open(launchAppUrl);
-    // window.open("https://naver.com");
+    // window.open(
+    //     "https://naver.com",
+    //     "window팝업",
+    //     "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=260, height=120, top=0,left=0"
+    // );
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
     window.location = launchAppUrl;
+    text10.textContent = `${window.opener?.document.frm1.txtSender.value}`;
     //   if (isClickChk && !Visibility.hidden()) {
     //     return (window.location = storeUrl);
     //   }
-
+    // console.log("opener 안의내용", opend);
     //   location.href = launchAppUrl;
 };
 
-console.log("opener", opener && opener.closed);
+// console.log("opener 밖의내용", opend);
 
 // document.addEventListener("visibilitychange", function () {
 //     if (isClickChk) {
