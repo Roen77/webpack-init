@@ -195,6 +195,8 @@ const joinUrl = () => {
   chk(popup).then(() => {
     if (!popup) {
       text15.textContent = "유효하지않음";
+    } else {
+      text15.textContent = "유효함";
     }
   });
 
