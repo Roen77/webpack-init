@@ -193,17 +193,19 @@ const joinUrl = () => {
   // console.log("opener 안의내용", opend);
   //   location.href = launchAppUrl;
 
-  const popup = window.open();
-  chk(popup)
-    .then(() => {
-      console.log(popup, "dd");
-      if (!popup) {
-        text15.textContent = "유효하지않음";
-      } else {
-        text15.textContent = "유효함";
-      }
-    })
-    .catch((err) => console.log("err", err));
+  //   const popup = window.open();
+  //   chk(popup)
+  //     .then(() => {
+  //       console.log(popup, "dd");
+  //       if (!popup) {
+  //         text15.textContent = "유효하지않음";
+  //       } else {
+  //         text15.textContent = "유효함";
+  //       }
+  //     })
+  //     .catch((err) => console.log("err", err));
+
+  window.location = launchAppUrl;
 
   //   const popup = window.open(launchAppUrl);
   //   if (!popup) {
@@ -262,6 +264,7 @@ const joinUrl = () => {
 
 window.onblur = function () {
   if (isMobileSafari) {
+    window.close();
     text6.textContent = "onblur";
     prevType = "onblur";
   }
