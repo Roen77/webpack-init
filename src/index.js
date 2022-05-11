@@ -87,7 +87,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setInterval(() => {
-        if (isClickChk && !Visibility.hidden() && prevType !== "blur") {
+        if (isClickChk && !Visibility.hidden() && prevType !== "onblur") {
             clearInterval(timer);
             return location.replace(storeUrl);
             // return (window.location = storeUrl);
