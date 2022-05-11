@@ -164,7 +164,8 @@ const joinUrl = () => {
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    window.location = launchAppUrl;
+    // window.location = launchAppUrl;
+    location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
     //     return (window.location = storeUrl);
     //   }
