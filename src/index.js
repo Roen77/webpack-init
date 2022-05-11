@@ -264,7 +264,7 @@ const joinUrl = () => {
 
 window.onblur = function () {
   if (isMobileSafari) {
-    window.close();
+    self.close();
     text6.textContent = "onblur";
     prevType = "onblur";
   }
