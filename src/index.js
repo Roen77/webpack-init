@@ -17,16 +17,16 @@ import { isIOS } from "mobile-device-detect";
 import andImg from "./images/and.png";
 import svg from "./images/11.svg";
 function component() {
-  const element = document.createElement("div");
-  element.innerHTML = `hello~`;
-  const imgElem = document.createElement("img");
-  // imgElem.src = svg;
-  // element.appendChild(imgElem);
-  console.log(styles, ": sytyles");
-  // {hellowebpack: 'yi39fuEg1urw6SGiN6as'} ': sytyles'
-  // 이렇게 key value 형태로 가져올수있다.
-  element.classList = styles.hellowebpack;
-  return element;
+    const element = document.createElement("div");
+    element.innerHTML = `hello~`;
+    const imgElem = document.createElement("img");
+    // imgElem.src = svg;
+    // element.appendChild(imgElem);
+    console.log(styles, ": sytyles");
+    // {hellowebpack: 'yi39fuEg1urw6SGiN6as'} ': sytyles'
+    // 이렇게 key value 형태로 가져올수있다.
+    element.classList = styles.hellowebpack;
+    return element;
 }
 
 document.body.appendChild(component());
@@ -53,8 +53,8 @@ const text4 = document.querySelector(".text4");
 // const text7 = document.querySelector(".text7");
 // const text8 = document.querySelector(".text8");
 const storeUrl = isIOS
-  ? "https://itunes.apple.com/app/id1498707344"
-  : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
+    ? "https://itunes.apple.com/app/id1498707344"
+    : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 // 앱 스키마 uri
 
@@ -70,128 +70,128 @@ const storeUrl = isIOS
 // });
 
 const chk = () => {
-  return new Promise((res) => {
-    location.href = launchAppUrl;
-  });
+    return new Promise(res => {
+        location.href = launchAppUrl;
+    });
 };
 
 let isClickChk = false;
 let type;
 let timer;
 const joinUrl = () => {
-  isClickChk = true;
+    isClickChk = true;
 
-  //   setTimeout(() => {
-  //     if (isClickChk && !Visibility.hidden()) {
-  //       return (window.location = storeUrl);
-  //     }
-  //   }, 3000);
-  timer = setTimeout(() => {
-    if (isClickChk && !Visibility.hidden()) {
-      clearInterval(timer);
-      return (window.location = storeUrl);
-    } else {
-      clearInterval(timer);
-    }
-  }, 2000);
-  //   setTimeout(() => {
-  //     if (Visibility.state() === "visible") {
-  //       return (window.location = storeUrl);
-  //     }
-  // if (document.webkitHidden || document.hidden) {
-  //   text4.textContent = "hidden 작동됨";
-  // }
-  // text2.textContent = "setTImeout 실행됨";
-  // // if (type !== "appurl") {
-  // //   window.location = storeUrl;
-  // // }
-  // // isClickChk = false;
-  // if (type !== "hidden") {
-  //   return (window.location = storeUrl);
-  // }
-  // console.log(document.visibilityState, "상태");
-  // if (document.visibilityState === "visible") {
-  //   return (window.location = storeUrl);
-  // }
-  // console.log("type확인", type);
-  //   }, 3000);
-  // const openAt = new Date();
-  // window.confirm("ddd");
-  //   setTimeout(() => {
-  //     console.log(location, window.history);
-  //     if (document.webkitHidden || document.hidden) {
-  //       text4.textContent = "hidden 작동됨";
-  //     }
-  //     // text2.textContent = "setTImeout 실행됨";
-  //     // if (prevType !== "onblur") {
-  //     //     window.location = storeUrl;
-  //     // }
-  //     // prevType = "";
+    //   setTimeout(() => {
+    //     if (isClickChk && !Visibility.hidden()) {
+    //       return (window.location = storeUrl);
+    //     }
+    //   }, 3000);
+    timer = setTimeout(() => {
+        if (isClickChk && !Visibility.hidden()) {
+            clearInterval(timer);
+            return location.replace(storeUrl);
+        } else {
+            clearInterval(timer);
+        }
+    }, 2000);
+    //   setTimeout(() => {
+    //     if (Visibility.state() === "visible") {
+    //       return (window.location = storeUrl);
+    //     }
+    // if (document.webkitHidden || document.hidden) {
+    //   text4.textContent = "hidden 작동됨";
+    // }
+    // text2.textContent = "setTImeout 실행됨";
+    // // if (type !== "appurl") {
+    // //   window.location = storeUrl;
+    // // }
+    // // isClickChk = false;
+    // if (type !== "hidden") {
+    //   return (window.location = storeUrl);
+    // }
+    // console.log(document.visibilityState, "상태");
+    // if (document.visibilityState === "visible") {
+    //   return (window.location = storeUrl);
+    // }
+    // console.log("type확인", type);
+    //   }, 3000);
+    // const openAt = new Date();
+    // window.confirm("ddd");
+    //   setTimeout(() => {
+    //     console.log(location, window.history);
+    //     if (document.webkitHidden || document.hidden) {
+    //       text4.textContent = "hidden 작동됨";
+    //     }
+    //     // text2.textContent = "setTImeout 실행됨";
+    //     // if (prevType !== "onblur") {
+    //     //     window.location = storeUrl;
+    //     // }
+    //     // prevType = "";
 
-  //     text7.textContent = `${JSON.stringify(history)}`;
-  //   }, 1000);
-  // if (isIOS) {
-  //     //사파리 이외
-  //     if (prev !== "blur") {
-  //         $(document).trigger("blur");
-  //     }
-  // } else {
-  //     setTimeout(() => {
-  //         if (document.webkitHidden || document.hidden) {
-  //             text4.textContent = "hidden 작동됨";
-  //         }
-  //         text2.textContent = "setTImeout 실행됨";
-  //         if (prevType !== "onblur") {
-  //             window.location = storeUrl;
-  //         }
-  //         prevType = "";
-  //     }, 1000);
-  // }
+    //     text7.textContent = `${JSON.stringify(history)}`;
+    //   }, 1000);
+    // if (isIOS) {
+    //     //사파리 이외
+    //     if (prev !== "blur") {
+    //         $(document).trigger("blur");
+    //     }
+    // } else {
+    //     setTimeout(() => {
+    //         if (document.webkitHidden || document.hidden) {
+    //             text4.textContent = "hidden 작동됨";
+    //         }
+    //         text2.textContent = "setTImeout 실행됨";
+    //         if (prevType !== "onblur") {
+    //             window.location = storeUrl;
+    //         }
+    //         prevType = "";
+    //     }, 1000);
+    // }
 
-  // location.replace(launchAppUrl);
-  //   window.open(launchAppUrl);
-  //   window.open("https://naver.com");
-  // if (isIOS) {
-  //     prevType = "isIosFocus";
-  // }
-  window.location = launchAppUrl;
-  //   if (isClickChk && !Visibility.hidden()) {
-  //     return (window.location = storeUrl);
-  //   }
+    // location.replace(launchAppUrl);
+    //   window.open(launchAppUrl);
+    //   window.open("https://naver.com");
+    // if (isIOS) {
+    //     prevType = "isIosFocus";
+    // }
+    window.location = launchAppUrl;
+    //   if (isClickChk && !Visibility.hidden()) {
+    //     return (window.location = storeUrl);
+    //   }
 
-  //   location.href = launchAppUrl;
+    //   location.href = launchAppUrl;
 };
 
 document.addEventListener("visibilitychange", function () {
-  if (isClickChk) {
-    if (document.visibilityState === "hidden") {
-      type = "hidden";
-    } else {
-      type = "visible";
+    if (isClickChk) {
+        if (document.visibilityState === "hidden") {
+            type = "hidden";
+        } else {
+            type = "visible";
+        }
     }
-  }
-  //   alert("change");
-  //   console.log(document.hidden);
-  // 숨김 여부가 변했을 때의 행동
-  //   text8.textContent = "변화감지" + `${Math.random()}`;
-  //   text9.textContent = `${document.hidden}`;
-  //   text10.textContent = `${document.visibilityState}`;
-  //   if (isClickChk) {
-  //     type = "appurl";
-  //   }
+    //   alert("change");
+    //   console.log(document.hidden);
+    // 숨김 여부가 변했을 때의 행동
+    //   text8.textContent = "변화감지" + `${Math.random()}`;
+    //   text9.textContent = `${document.hidden}`;
+    //   text10.textContent = `${document.visibilityState}`;
+    //   if (isClickChk) {
+    //     type = "appurl";
+    //   }
 });
 
 aBtn1.addEventListener("click", () => {
-  location.replace("https://itunes.apple.com/app/id1498707344");
+    location.replace("https://itunes.apple.com/app/id1498707344");
 });
 aBtn2.addEventListener("click", () => {
-  location.replace("https://itunes.apple.com/app/id1498707344");
+    location.replace("https://itunes.apple.com/app/id1498707344");
 });
 naver.addEventListener("click", () => {
-  location.replace("https://www.naver.com/");
+    location.replace("https://www.naver.com/");
 });
 wopen.addEventListener("click", () => {
-  window.open("https://itunes.apple.com/app/id1498707344");
+    window.open("https://itunes.apple.com/app/id1498707344");
 });
 
 // document.addEventListener("blur", () => {
@@ -204,26 +204,26 @@ wopen.addEventListener("click", () => {
 // });
 
 window.onblur = function () {
-  text.textContent = "onblur";
-  prevType = "onblur";
+    text.textContent = "onblur";
+    prevType = "onblur";
 };
 window.onfocus = function () {
-  if (prevType === "onblur") {
-    prevType = "";
-  }
-  text6.textContent = "focus";
-  prevType = "focus";
-  // text.textContent = "onfocus";
-  // prevType = "onfocus";
-  // setTimeout(() => {
-  //     $(document).trigger("blur");
-  // }, 300);
+    if (prevType === "onblur") {
+        prevType = "";
+    }
+    text6.textContent = "focus";
+    prevType = "focus";
+    // text.textContent = "onfocus";
+    // prevType = "onfocus";
+    // setTimeout(() => {
+    //     $(document).trigger("blur");
+    // }, 300);
 };
 
 document.addEventListener("mouseout", () => {
-  if (isIOS) {
-    text3.textContent = "ios 마우스 나감";
-  }
+    if (isIOS) {
+        text3.textContent = "ios 마우스 나감";
+    }
 });
 
 // $(window).on("blur", function () {
@@ -239,23 +239,23 @@ console.log("상태좀", Visibility.state());
 //   text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
 // }
 if ("prerender" == Visibility.state()) {
-  alert("prerender'");
+    alert("prerender'");
 }
 // if (Visibility.state() === "visible") {
 //   text3.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
 // }
 
 Visibility.change(function (e, state) {
-  //   Statistics.visibilityChange(state);
-  console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
-  if (isClickChk && !Visibility.hidden()) {
-    clearTimeout(timer);
-    text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
-  }
+    //   Statistics.visibilityChange(state);
+    console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
+    if (isClickChk && !Visibility.hidden()) {
+        clearTimeout(timer);
+        text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
+    }
 
-  //   if (isClickChk) {
-  //     isClickChk = false;
-  //   }
+    //   if (isClickChk) {
+    //     isClickChk = false;
+    //   }
 });
 
 joinBtn.addEventListener("click", joinUrl);
