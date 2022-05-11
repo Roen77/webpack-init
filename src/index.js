@@ -51,7 +51,7 @@ const text4 = document.querySelector(".text4");
 const text5 = document.querySelector(".text5");
 const text6 = document.querySelector(".text6");
 const text7 = document.querySelector(".text7");
-// const text8 = document.querySelector(".text8");
+const text8 = document.querySelector(".text8");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -87,7 +87,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setInterval(() => {
-        if (isClickChk && !Visibility.hidden() && prevType !== "onblur") {
+        if (isClickChk && !Visibility.hidden()) {
             clearInterval(timer);
             return location.replace(storeUrl);
             // return (window.location = storeUrl);
@@ -220,6 +220,10 @@ window.onfocus = function () {
     //     $(document).trigger("blur");
     // }, 300);
 };
+
+document.addEventListener("focusout", () => {
+    text8.textContent = "focusout";
+});
 
 document.addEventListener("mouseout", () => {
     if (isIOS) {
