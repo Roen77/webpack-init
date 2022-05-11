@@ -193,11 +193,13 @@ const joinUrl = () => {
 
   const popup = window.open();
   chk(popup).then(() => {
-    if (!popup) {
-      text15.textContent = "유효하지않음";
-    } else {
-      text15.textContent = "유효함";
-    }
+    setTimeout(() => {
+      if (!popup) {
+        text15.textContent = "유효하지않음";
+      } else {
+        text15.textContent = "유효함";
+      }
+    }, 1000);
   });
 
   //   const popup = window.open(launchAppUrl);
