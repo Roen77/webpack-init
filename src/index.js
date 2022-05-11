@@ -58,6 +58,7 @@ const text10 = document.querySelector(".text10");
 const text11 = document.querySelector(".text11");
 const text13 = document.querySelector(".text13");
 const text14 = document.querySelector(".text14");
+const text15 = document.querySelector(".text15");
 
 text14.textContent = `${isMobileSafari}`;
 const storeUrl = isIOS
@@ -180,10 +181,12 @@ const joinUrl = () => {
   //   }
   // console.log("opener 안의내용", opend);
   //   location.href = launchAppUrl;
-  const popup = window.open(launchAppUrl);
-  if (!popup) {
-    alert("사파리파리");
-  }
+  const popup = window.open();
+  popup.location = launchAppUrl;
+  //   const popup = window.open(launchAppUrl);
+  //   if (!popup) {
+  //     text15.textContent = `유효하지 않다`;
+  //   }
 };
 
 // console.log("opener 밖의내용", opend);
