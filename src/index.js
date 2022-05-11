@@ -78,9 +78,9 @@ const storeUrl = isIOS
 //   }, 2000);
 // });
 
-const chk = () => {
+const chk = (data) => {
   return new Promise((res) => {
-    location.href = launchAppUrl;
+    res((data.location = launchAppUrl));
   });
 };
 
@@ -89,16 +89,16 @@ const opend = window.opener;
 let type;
 let timer;
 const joinUrl = () => {
-  isClickChk = true;
-  var visitTime = new Date().getTime();
-  setTimeout(function () {
-    if (new Date().getTime() - visitTime < 3000) {
-      location.href = storeUrl;
-    }
-  }, 2500);
-  setTimeout(function () {
-    location.href = launchAppUrl;
-  }, 0);
+  //   isClickChk = true;
+  //   var visitTime = new Date().getTime();
+  //   setTimeout(function () {
+  //     if (new Date().getTime() - visitTime < 3000) {
+  //       location.href = storeUrl;
+  //     }
+  //   }, 2500);
+  //   setTimeout(function () {
+  //     location.href = launchAppUrl;
+  //   }, 0);
 
   //   setTimeout(() => {
   //     if (isClickChk && !Visibility.hidden()) {
@@ -190,6 +190,13 @@ const joinUrl = () => {
   //   }
   // console.log("opener 안의내용", opend);
   //   location.href = launchAppUrl;
+
+  const popup = window.open();
+  chk(popup).then(() => {
+    if (!popup) {
+      text15.textContent = "유효하지않음";
+    }
+  });
 
   //   const popup = window.open(launchAppUrl);
   //   if (!popup) {
