@@ -86,14 +86,14 @@ const joinUrl = () => {
   //       return (window.location = storeUrl);
   //     }
   //   }, 3000);
-  timer = setTimeout(() => {
-    if (isClickChk && !Visibility.hidden()) {
-      clearInterval(timer);
-      return (window.location = storeUrl);
-    } else {
-      clearInterval(timer);
-    }
-  }, 2000);
+  //   timer = setTimeout(() => {
+  //     if (isClickChk && !Visibility.hidden()) {
+  //       clearInterval(timer);
+  //       return (window.location = storeUrl);
+  //     } else {
+  //       clearInterval(timer);
+  //     }
+  //   }, 2000);
   //   setTimeout(() => {
   //     if (Visibility.state() === "visible") {
   //       return (window.location = storeUrl);
@@ -154,12 +154,14 @@ const joinUrl = () => {
   // if (isIOS) {
   //     prevType = "isIosFocus";
   // }
-  window.location = launchAppUrl;
+  //   window.location = launchAppUrl;
   //   if (isClickChk && !Visibility.hidden()) {
   //     return (window.location = storeUrl);
   //   }
 
   //   location.href = launchAppUrl;
+  const popup = window.open();
+  popup.location = launchAppUrl;
 };
 
 document.addEventListener("visibilitychange", function () {
