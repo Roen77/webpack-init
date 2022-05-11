@@ -80,7 +80,9 @@ const storeUrl = isIOS
 
 const chk = (data) => {
   return new Promise((res) => {
-    res((data.location = launchAppUrl));
+    setTimeout(() => {
+      res((data.location = launchAppUrl));
+    }, 2000);
   });
 };
 
@@ -192,15 +194,16 @@ const joinUrl = () => {
   //   location.href = launchAppUrl;
 
   const popup = window.open();
-  chk(popup).then(() => {
-    setTimeout(() => {
+  chk(popup)
+    .then(() => {
+      console.log(popup, "dd");
       if (!popup) {
         text15.textContent = "유효하지않음";
       } else {
         text15.textContent = "유효함";
       }
-    }, 1000);
-  });
+    })
+    .catch((err) => console.log("err", err));
 
   //   const popup = window.open(launchAppUrl);
   //   if (!popup) {
