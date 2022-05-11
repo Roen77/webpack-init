@@ -90,16 +90,16 @@ const joinUrl = () => {
     //       return (window.location = storeUrl);
     //     }
     //   }, 3000);
-    timer = setInterval(() => {
+    timer = setTimeout(() => {
         text9.textContent = `${opener && opener.closed}`;
         if (isClickChk && !Visibility.hidden()) {
-            clearInterval(timer);
+            clearTimeout(timer);
             return location.replace(storeUrl);
             // return (window.location = storeUrl);
         } else {
-            clearInterval(timer);
+            clearTimeout(timer);
         }
-    }, 2000);
+    }, 2200);
     //   setTimeout(() => {
     //     if (Visibility.state() === "visible") {
     //       return (window.location = storeUrl);
@@ -266,7 +266,7 @@ Visibility.change(function (e, state) {
     text4.textContent = `보여지는상태:${Visibility.state()} 클릭여부체크는 ${isClickChk}`;
     if (isClickChk && !Visibility.hidden()) {
         text5.textContent = `클리어 여부 ${Math.ceil(Math.random() * 100)}`;
-        clearInterval(timer);
+        clearTimeout(timer);
     }
 
     //   if (isClickChk) {
