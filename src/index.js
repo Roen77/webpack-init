@@ -181,7 +181,9 @@ const joinUrl = () => {
   // console.log("opener 안의내용", opend);
   //   location.href = launchAppUrl;
   const popup = window.open();
-  popup.location = launchAppUrl;
+  setTimeout(() => {
+    popup.location = launchAppUrl;
+  }, 1000);
 };
 
 // console.log("opener 밖의내용", opend);
