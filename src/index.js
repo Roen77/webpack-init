@@ -49,8 +49,8 @@ const text2 = document.querySelector(".text2");
 const text3 = document.querySelector(".text3");
 const text4 = document.querySelector(".text4");
 const text5 = document.querySelector(".text5");
-// const text6 = document.querySelector(".text6");
-// const text7 = document.querySelector(".text7");
+const text6 = document.querySelector(".text6");
+const text7 = document.querySelector(".text7");
 // const text8 = document.querySelector(".text8");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
@@ -205,7 +205,7 @@ wopen.addEventListener("click", () => {
 // });
 
 window.onblur = function () {
-    text.textContent = "onblur";
+    text6.textContent = "onblur";
     prevType = "onblur";
 };
 window.onfocus = function () {
@@ -227,9 +227,9 @@ document.addEventListener("mouseout", () => {
     }
 });
 
-// $(window).on("blur", function () {
-//   text5.textContent = " 제이쿼리blur";
-// });
+$(window).on("blur", function () {
+    text7.textContent = " 제이쿼리blur";
+});
 // $(window).on("focus", function () {
 //   text6.textContent = " 제이쿼리포커스";
 // });
