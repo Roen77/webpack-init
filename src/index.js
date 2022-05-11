@@ -257,9 +257,9 @@ console.log("상태좀", Visibility.state());
 if ("prerender" == Visibility.state()) {
     alert("prerender'");
 }
-// if (Visibility.state() === "visible") {
-//   text3.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
-// }
+if (Visibility.state() === "visible") {
+    text3.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
+}
 
 Visibility.change(function (e, state) {
     //   Statistics.visibilityChange(state);
