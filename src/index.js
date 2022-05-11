@@ -248,9 +248,9 @@ if ("prerender" == Visibility.state()) {
 Visibility.change(function (e, state) {
     //   Statistics.visibilityChange(state);
     console.log(isClickChk, "클릭여부, hidden 여부:", Visibility.hidden());
+    text4.textContent = `보여지는상태:${Visibility.state()} 클릭여부체크는 ${isClickChk}`;
     if (isClickChk && !Visibility.hidden()) {
         clearInterval(timer);
-        text4.textContent = `${Visibility.state()} 체크는 ${isClickChk}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
     }
 
     //   if (isClickChk) {
