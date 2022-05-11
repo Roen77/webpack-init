@@ -96,7 +96,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setTimeout(() => {
-        text9.textContent = `${opener && opener.closed}`;
+        // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             return clearTimeout(timer);
         }
@@ -203,24 +203,24 @@ const joinUrl = () => {
 //     //   }
 // });
 
-aBtn1.addEventListener("click", () => {
-    location.replace("https://itunes.apple.com/app/id1498707344");
-});
-aBtn2.addEventListener("click", () => {
-    location.replace("https://itunes.apple.com/app/id1498707344");
-});
-naver.addEventListener("click", () => {
-    location.replace(launchAppUrl);
-    // location.replace("https://www.naver.com/");
-});
-wopen.addEventListener("click", () => {
-    // window.open("https://itunes.apple.com/app/id1498707344");
-    window.open(launchAppUrl);
-});
-hrefbrn.addEventListener("click", () => {
-    location.href = launchAppUrl;
-    // location.href = "https://www.naver.com/";
-});
+// aBtn1.addEventListener("click", () => {
+//     location.replace("https://itunes.apple.com/app/id1498707344");
+// });
+// aBtn2.addEventListener("click", () => {
+//     location.replace("https://itunes.apple.com/app/id1498707344");
+// });
+// naver.addEventListener("click", () => {
+//     location.replace(launchAppUrl);
+//     // location.replace("https://www.naver.com/");
+// });
+// wopen.addEventListener("click", () => {
+//     // window.open("https://itunes.apple.com/app/id1498707344");
+//     window.open(launchAppUrl);
+// });
+// hrefbrn.addEventListener("click", () => {
+//     location.href = launchAppUrl;
+//     // location.href = "https://www.naver.com/";
+// });
 
 // document.addEventListener("blur", () => {
 //     text.textContent = "blur";
