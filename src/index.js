@@ -240,7 +240,7 @@ window.onblur = function () {
 window.onfocus = function () {
     if (isMobileSafari) {
         text8.textContent = "onfocus";
-        prevType = "";
+        // prevType = "";
     }
     // text6.textContent = "focus";
     // prevType = "focus";
