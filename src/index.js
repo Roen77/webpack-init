@@ -56,6 +56,7 @@ const text8 = document.querySelector(".text8");
 const text9 = document.querySelector(".text9");
 const text10 = document.querySelector(".text10");
 const text11 = document.querySelector(".text11");
+const text13 = document.querySelector(".text13");
 const storeUrl = isIOS
     ? "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
@@ -166,6 +167,7 @@ const joinUrl = () => {
     //     prevType = "isIosFocus";
     // }
     window.location = launchAppUrl;
+    text13.textContent = `${launchAppUrl}`;
     // location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
     //     return (window.location = storeUrl);
@@ -202,13 +204,16 @@ aBtn2.addEventListener("click", () => {
     location.replace("https://itunes.apple.com/app/id1498707344");
 });
 naver.addEventListener("click", () => {
-    location.replace("https://www.naver.com/");
+    location.replace(launchAppUrl);
+    // location.replace("https://www.naver.com/");
 });
 wopen.addEventListener("click", () => {
-    window.open("https://itunes.apple.com/app/id1498707344");
+    // window.open("https://itunes.apple.com/app/id1498707344");
+    window.open(launchAppUrl);
 });
 hrefbrn.addEventListener("click", () => {
-    location.href = "https://www.naver.com/";
+    location.href = launchAppUrl;
+    // location.href = "https://www.naver.com/";
 });
 
 // document.addEventListener("blur", () => {
