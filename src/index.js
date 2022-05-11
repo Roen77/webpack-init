@@ -180,10 +180,10 @@ const joinUrl = () => {
   //   }
   // console.log("opener 안의내용", opend);
   //   location.href = launchAppUrl;
-  const popup = window.open();
-  setTimeout(() => {
-    popup.location = launchAppUrl;
-  }, 1000);
+  const popup = window.open(launchAppUrl);
+  if (!popup) {
+    alert("사파리파리");
+  }
 };
 
 // console.log("opener 밖의내용", opend);
