@@ -89,8 +89,8 @@ const joinUrl = () => {
     timer = setInterval(() => {
         if (isClickChk && !Visibility.hidden()) {
             clearInterval(timer);
-            // return location.replace(storeUrl);
-            return (window.location = storeUrl);
+            return location.replace(storeUrl);
+            // return (window.location = storeUrl);
         } else {
             clearInterval(timer);
         }
@@ -151,11 +151,11 @@ const joinUrl = () => {
 
     // location.replace(launchAppUrl);
     //   window.open(launchAppUrl);
-    window.open("https://naver.com");
+    // window.open("https://naver.com");
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
+    window.location = launchAppUrl;
     //   if (isClickChk && !Visibility.hidden()) {
     //     return (window.location = storeUrl);
     //   }
