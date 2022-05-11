@@ -87,7 +87,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setInterval(() => {
-        if (isClickChk && !Visibility.hidden()) {
+        if (isClickChk && !Visibility.hidden() && prevType !== "blur") {
             clearInterval(timer);
             return location.replace(storeUrl);
             // return (window.location = storeUrl);
@@ -163,24 +163,24 @@ const joinUrl = () => {
     //   location.href = launchAppUrl;
 };
 
-document.addEventListener("visibilitychange", function () {
-    if (isClickChk) {
-        if (document.visibilityState === "hidden") {
-            type = "hidden";
-        } else {
-            type = "visible";
-        }
-    }
-    //   alert("change");
-    //   console.log(document.hidden);
-    // 숨김 여부가 변했을 때의 행동
-    //   text8.textContent = "변화감지" + `${Math.random()}`;
-    //   text9.textContent = `${document.hidden}`;
-    //   text10.textContent = `${document.visibilityState}`;
-    //   if (isClickChk) {
-    //     type = "appurl";
-    //   }
-});
+// document.addEventListener("visibilitychange", function () {
+//     if (isClickChk) {
+//         if (document.visibilityState === "hidden") {
+//             type = "hidden";
+//         } else {
+//             type = "visible";
+//         }
+//     }
+//     //   alert("change");
+//     //   console.log(document.hidden);
+//     // 숨김 여부가 변했을 때의 행동
+//     //   text8.textContent = "변화감지" + `${Math.random()}`;
+//     //   text9.textContent = `${document.hidden}`;
+//     //   text10.textContent = `${document.visibilityState}`;
+//     //   if (isClickChk) {
+//     //     type = "appurl";
+//     //   }
+// });
 
 aBtn1.addEventListener("click", () => {
     location.replace("https://itunes.apple.com/app/id1498707344");
@@ -212,8 +212,8 @@ window.onfocus = function () {
     if (prevType === "onblur") {
         prevType = "";
     }
-    text6.textContent = "focus";
-    prevType = "focus";
+    // text6.textContent = "focus";
+    // prevType = "focus";
     // text.textContent = "onfocus";
     // prevType = "onfocus";
     // setTimeout(() => {
