@@ -88,10 +88,10 @@ const joinUrl = () => {
     //   }, 3000);
     timer = setTimeout(() => {
         if (isClickChk && !Visibility.hidden()) {
-            clearInterval(timer);
+            clearTimeout(timer);
             return location.replace(storeUrl);
         } else {
-            clearInterval(timer);
+            clearTimeout(timer);
         }
     }, 2000);
     //   setTimeout(() => {
