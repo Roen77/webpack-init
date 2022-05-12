@@ -115,7 +115,7 @@ const joinUrl = () => {
         }
         if (isClickChk && !Visibility.hidden()) {
             // clearTimeout(timer);
-            // return location.replace(storeUrl);
+            return location.replace(storeUrl);
             // return (window.location = storeUrl);
         } else {
             // clearTimeout(timer);
