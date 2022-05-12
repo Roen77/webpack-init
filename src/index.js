@@ -58,6 +58,7 @@ const text10 = document.querySelector(".text10");
 const text11 = document.querySelector(".text11");
 const text13 = document.querySelector(".text13");
 const text14 = document.querySelector(".text14");
+const text15 = document.querySelector(".text15");
 
 text14.textContent = `${isMobileSafari}`;
 const storeUrl = isIOS
@@ -87,6 +88,7 @@ let isClickChk = false;
 const opend = window.opener;
 let type;
 let timer;
+let timer2;
 const joinUrl = () => {
     isClickChk = true;
 
@@ -99,10 +101,10 @@ const joinUrl = () => {
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             clearTimeout(timer);
-            // setTimeout(() => {
-            //     if (!Visibility.hidden()) return;
-            //     else location.replace(storeUrl);
-            // }, 5000);
+            timer2 = setTimeout(() => {
+                if (Visibility.hidden()) return clearTimeout(timer2);
+                else location.replace(storeUrl);
+            }, 5000);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
@@ -114,16 +116,6 @@ const joinUrl = () => {
         }
     }, 2200);
 
-    setTimeout(() => {
-        if (
-            isMobileSafari &&
-            prevType === "onblur" &&
-            isClickChk &&
-            !Visibility.hidden()
-        ) {
-            location.replace(storeUrl);
-        }
-    }, 5000);
     //   setTimeout(() => {
     //     if (Visibility.state() === "visible") {
     //       return (window.location = storeUrl);
@@ -254,11 +246,9 @@ window.onblur = function () {
     }
 };
 window.onfocus = function () {
-    // if (isMobileSafari && isClickChk) {
-    //     text8.textContent = "onfocus";
-    //     prevType = "onfocus";
-    //     location.replace(storeUrl);
-    // }
+    if (isMobileSafari && isClickChk) {
+        text8.textContent = "onfocus";
+    }
     // text6.textContent = "focus";
     // prevType = "focus";
     // text.textContent = "onfocus";
