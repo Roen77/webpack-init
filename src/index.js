@@ -102,15 +102,15 @@ const joinUrl = () => {
     //   }, 3000);
     timer = setTimeout(() => {
         console.log(test, "test");
-        // if (test) {
-        //     alert("aa");
-        // }
+        if (test) {
+            alert("aa");
+        }
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk) {
             // const openAt = new Date();
             if (test) {
-                // alert("aa");
-                location.replace(storeUrl);
+                alert("aa in");
+                // location.replace(storeUrl);
             }
             clearTimeout(timer);
             // if (new Date() - openAt < 70000) {
