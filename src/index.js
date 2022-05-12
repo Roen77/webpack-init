@@ -106,13 +106,10 @@ const joinUrl = () => {
             alert("aa");
         }
         // text9.textContent = `${opener && opener.closed}`;
-        if (isMobileSafari && isClickChk) {
+        if (isMobileSafari && isClickChk && prevType === "onblur") {
+            alert("Aa");
             // const openAt = new Date();
-            if (test) {
-                alert("aa in");
-                // location.replace(storeUrl);
-            }
-            clearTimeout(timer);
+            // clearTimeout(timer);
             // if (new Date() - openAt < 70000) {
             //     if (Visibility.hidden()) return;
             //     else location.replace(storeUrl);
@@ -188,7 +185,7 @@ const joinUrl = () => {
     // }
 
     // location.replace(launchAppUrl);
-    test = window.open(launchAppUrl);
+    // test = window.open(la);
     // window.open(
     //     "https://naver.com",
     //     "window팝업",
@@ -198,7 +195,7 @@ const joinUrl = () => {
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
+    window.location = launchAppUrl;
     text13.textContent = `${launchAppUrl}`;
     // location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
