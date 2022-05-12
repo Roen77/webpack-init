@@ -104,7 +104,7 @@ const joinUrl = () => {
             timer2 = setTimeout(() => {
                 if (Visibility.hidden()) return clearTimeout(timer2);
                 else location.replace(storeUrl);
-            }, 5000);
+            }, 3000);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
@@ -114,7 +114,7 @@ const joinUrl = () => {
         } else {
             clearTimeout(timer);
         }
-    }, 2200);
+    }, 1000);
 
     //   setTimeout(() => {
     //     if (Visibility.state() === "visible") {
