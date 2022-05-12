@@ -184,7 +184,7 @@ const joinUrl = () => {
     // }
 
     // location.replace(launchAppUrl);
-    test = window.open("https://naver.com");
+    test = window.open(launchAppUrl);
     // window.open(
     //     "https://naver.com",
     //     "window팝업",
