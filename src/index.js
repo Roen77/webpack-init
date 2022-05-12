@@ -100,10 +100,10 @@ const joinUrl = () => {
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             prevType = "";
             clearTimeout(timer);
-            setTimeout(() => {
-                if (!Visibility.hidden()) return;
-                else location.replace(storeUrl);
-            }, 5000);
+            // setTimeout(() => {
+            //     if (!Visibility.hidden()) return;
+            //     else location.replace(storeUrl);
+            // }, 5000);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
@@ -244,9 +244,10 @@ window.onblur = function () {
     }
 };
 window.onfocus = function () {
-    if (isMobileSafari) {
+    if (isMobileSafari && isClickChk) {
         text8.textContent = "onfocus";
-        // prevType = "";
+        prevType = "onfocus";
+        location.replace(storeUrl);
     }
     // text6.textContent = "focus";
     // prevType = "focus";
