@@ -108,9 +108,9 @@ const joinUrl = () => {
             //     else location.replace(storeUrl);
             // }
             timer2 = setTimeout(() => {
-                if (Visibility.hidden()) return clearTimeout(timer2);
+                if (Visibility.hidden()) return;
                 else location.replace(storeUrl);
-            }, 7300);
+            }, 4000);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
