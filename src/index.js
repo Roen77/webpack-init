@@ -101,8 +101,8 @@ const joinUrl = () => {
             prevType = "";
             clearTimeout(timer);
             setTimeout(() => {
-                if (Visibility.hidden()) return;
-                else return location.replace(storeUrl);
+                if (!Visibility.hidden()) return;
+                else location.replace(storeUrl);
             }, 5000);
             return;
         }
