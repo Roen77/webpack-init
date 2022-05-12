@@ -98,12 +98,12 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setTimeout(() => {
-        clearTimeout(timer);
+        // clearTimeout(timer);
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             const openAt = new Date();
             clearTimeout(timer);
-            if (new Date() - openAt < 8500) {
+            if (new Date() - openAt < 9500) {
                 if (Visibility.hidden()) return clearTimeout(timer2);
                 else location.replace(storeUrl);
             }
@@ -183,11 +183,11 @@ const joinUrl = () => {
     //     "window팝업",
     //     "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=260, height=120, top=0,left=0"
     // );
-    alert("aa");
+    // alert("aa");
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    // window.location = launchAppUrl;
+    window.location = launchAppUrl;
     text13.textContent = `${launchAppUrl}`;
     // location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
@@ -252,7 +252,7 @@ window.onblur = function () {
         prevType = "onblur";
     }
 };
-window.addEventListener("popstate", () => {
+window.addEventListener("close", () => {
     text2.textContent = "이벤트 시작";
 });
 window.onfocus = function () {
