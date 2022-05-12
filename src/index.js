@@ -103,7 +103,7 @@ const joinUrl = () => {
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             const openAt = new Date();
             clearTimeout(timer);
-            if (new Date() - openAt < 6500) {
+            if (new Date() - openAt < 8500) {
                 if (Visibility.hidden()) return clearTimeout(timer2);
                 else location.replace(storeUrl);
             }
