@@ -293,6 +293,7 @@ Visibility.change(function (e, state) {
     if (isClickChk && !Visibility.hidden()) {
         text5.textContent = `클리어 여부 ${Math.ceil(Math.random() * 100)}`;
         clearTimeout(timer);
+        clearTimeout(timer2);
     }
 
     //   if (isClickChk) {
