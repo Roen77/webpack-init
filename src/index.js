@@ -107,7 +107,7 @@ const joinUrl = () => {
         }
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
-            alert("Aa");
+            alert(`aa ${Visibility.hidden()}`);
             // const openAt = new Date();
             // clearTimeout(timer);
             // if (new Date() - openAt < 70000) {
