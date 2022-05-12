@@ -98,6 +98,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setTimeout(() => {
+        clearTimeout(timer);
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             const openAt = new Date();
@@ -113,11 +114,11 @@ const joinUrl = () => {
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
-            clearTimeout(timer);
+            // clearTimeout(timer);
             return location.replace(storeUrl);
             // return (window.location = storeUrl);
         } else {
-            clearTimeout(timer);
+            // clearTimeout(timer);
         }
     }, 2200);
 
