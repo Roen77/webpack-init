@@ -61,10 +61,13 @@ const text14 = document.querySelector(".text14");
 const text15 = document.querySelector(".text15");
 
 text14.textContent = `${isMobileSafari}`;
+// const storeUrl = isIOS
+//     ? isMobileSafari
+//         ? "itms-apps://itunes.apple.com/app/id1498707344"
+//         : "https://itunes.apple.com/app/id1498707344"
+//     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 const storeUrl = isIOS
-    ? isMobileSafari
-        ? "itms-apps://itunes.apple.com/app/id1498707344"
-        : "https://itunes.apple.com/app/id1498707344"
+    ? "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 // 앱 스키마 uri
