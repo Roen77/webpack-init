@@ -121,7 +121,7 @@ const joinUrl = () => {
             isClickChk &&
             !Visibility.hidden()
         ) {
-            ocation.replace(storeUrl);
+            location.replace(storeUrl);
         }
     }, 5000);
     //   setTimeout(() => {
