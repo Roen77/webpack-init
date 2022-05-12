@@ -101,7 +101,8 @@ const joinUrl = () => {
             prevType = "";
             clearTimeout(timer);
             setTimeout(() => {
-                return location.replace(storeUrl);
+                if (Visibility.hidden()) return;
+                else return location.replace(storeUrl);
             }, 5000);
             return;
         }
@@ -238,7 +239,7 @@ const joinUrl = () => {
 
 window.onblur = function () {
     if (isMobileSafari) {
-        text6.textContent = "onblur";
+        text6.textContent = "onblur " + `${Math.ceil(Math.random() * 10)}`;
         prevType = "onblur";
     }
 };
