@@ -98,7 +98,7 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setTimeout(() => {
-        // clearTimeout(timer);
+        clearTimeout(timer);
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             const openAt = new Date();
