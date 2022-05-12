@@ -88,6 +88,7 @@ let isClickChk = false;
 const opend = window.opener;
 let type;
 let timer;
+let timer2;
 const joinUrl = () => {
     isClickChk = true;
 
@@ -102,14 +103,14 @@ const joinUrl = () => {
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             const openAt = new Date();
             // clearTimeout(timer);
-            if (new Date() - openAt < 70000) {
-                if (Visibility.hidden()) return;
-                else location.replace(storeUrl);
-            }
-            // timer2 = setTimeout(() => {
-            //     if (Visibility.hidden()) return clearTimeout(timer2);
+            // if (new Date() - openAt < 70000) {
+            //     if (Visibility.hidden()) return;
             //     else location.replace(storeUrl);
-            // }, 3300);
+            // }
+            timer2 = setTimeout(() => {
+                if (Visibility.hidden()) return clearTimeout(timer2);
+                else location.replace(storeUrl);
+            }, 7300);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
@@ -302,7 +303,7 @@ Visibility.change(function (e, state) {
     if (isClickChk && !Visibility.hidden()) {
         text5.textContent = `클리어 여부 ${Math.ceil(Math.random() * 100)}`;
         clearTimeout(timer);
-        // clearTimeout(timer2);
+        clearTimeout(timer2);
     }
 
     //   if (isClickChk) {
