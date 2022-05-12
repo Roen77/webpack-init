@@ -98,6 +98,7 @@ const joinUrl = () => {
     timer = setTimeout(() => {
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
+            prevType = "";
             clearTimeout(timer);
             setTimeout(() => {
                 return location.replace(storeUrl);
@@ -244,7 +245,7 @@ window.onblur = function () {
 window.onfocus = function () {
     if (isMobileSafari) {
         text8.textContent = "onfocus";
-        prevType = "";
+        // prevType = "";
     }
     // text6.textContent = "focus";
     // prevType = "focus";
