@@ -104,7 +104,7 @@ const joinUrl = () => {
             timer2 = setTimeout(() => {
                 if (Visibility.hidden()) return clearTimeout(timer2);
                 else location.replace(storeUrl);
-            }, 3000);
+            }, 3200);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
@@ -114,7 +114,7 @@ const joinUrl = () => {
         } else {
             clearTimeout(timer);
         }
-    }, 1000);
+    }, 2200);
 
     //   setTimeout(() => {
     //     if (Visibility.state() === "visible") {
@@ -284,7 +284,7 @@ if ("prerender" == Visibility.state()) {
     alert("prerender'");
 }
 if (Visibility.state() === "visible") {
-    text3.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
+    // text3.textContent = `${Visibility.state()} 체크는 ${isClickChk}`;
 }
 
 Visibility.change(function (e, state) {
