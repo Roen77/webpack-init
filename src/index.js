@@ -108,15 +108,19 @@ const joinUrl = () => {
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             // const openAt = new Date();
-            // clearTimeout(timer);
+            if (test) {
+                // alert("aa");
+                location.replace(storeUrl);
+            }
+            clearTimeout(timer);
             // if (new Date() - openAt < 70000) {
             //     if (Visibility.hidden()) return;
             //     else location.replace(storeUrl);
             // }
-            timer2 = setTimeout(() => {
-                if (Visibility.hidden()) return;
-                else location.replace(storeUrl);
-            }, 1000);
+            // timer2 = setTimeout(() => {
+            //     if (Visibility.hidden()) return;
+            //     else location.replace(storeUrl);
+            // }, 1000);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
