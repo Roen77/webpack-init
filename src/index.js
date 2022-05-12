@@ -62,7 +62,9 @@ const text15 = document.querySelector(".text15");
 
 text14.textContent = `${isMobileSafari}`;
 const storeUrl = isIOS
-    ? "https://itunes.apple.com/app/id1498707344"
+    ? isMobileSafari
+        ? "itms-apps://itunes.apple.com/app/id1498707344"
+        : "https://itunes.apple.com/app/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 // 앱 스키마 uri
