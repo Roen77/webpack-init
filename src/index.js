@@ -244,11 +244,11 @@ window.onblur = function () {
     }
 };
 window.onfocus = function () {
-    if (isMobileSafari && isClickChk) {
-        text8.textContent = "onfocus";
-        prevType = "onfocus";
-        location.replace(storeUrl);
-    }
+    // if (isMobileSafari && isClickChk) {
+    //     text8.textContent = "onfocus";
+    //     prevType = "onfocus";
+    //     location.replace(storeUrl);
+    // }
     // text6.textContent = "focus";
     // prevType = "focus";
     // text.textContent = "onfocus";
