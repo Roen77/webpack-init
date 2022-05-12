@@ -115,7 +115,7 @@ const joinUrl = () => {
         }
         if (isClickChk && !Visibility.hidden()) {
             // clearTimeout(timer);
-            return location.replace(storeUrl);
+            // return location.replace(storeUrl);
             // return (window.location = storeUrl);
         } else {
             // clearTimeout(timer);
@@ -183,10 +183,11 @@ const joinUrl = () => {
     //     "window팝업",
     //     "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=260, height=120, top=0,left=0"
     // );
+    alert("aa");
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    window.location = launchAppUrl;
+    // window.location = launchAppUrl;
     text13.textContent = `${launchAppUrl}`;
     // location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
@@ -251,6 +252,9 @@ window.onblur = function () {
         prevType = "onblur";
     }
 };
+window.addEventListener("popstate", () => {
+    text2.textContent = "이벤트 시작";
+});
 window.onfocus = function () {
     if (isMobileSafari && isClickChk) {
         text8.textContent = "onfocus";
