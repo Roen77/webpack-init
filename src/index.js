@@ -87,6 +87,7 @@ const chk = () => {
 let isClickChk = false;
 const opend = window.opener;
 let type;
+let test;
 let timer;
 let timer2;
 const joinUrl = () => {
@@ -100,6 +101,10 @@ const joinUrl = () => {
     //     }
     //   }, 3000);
     timer = setTimeout(() => {
+        console.log(test, "test");
+        if (test) {
+            alert("aa");
+        }
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             // const openAt = new Date();
@@ -111,7 +116,7 @@ const joinUrl = () => {
             timer2 = setTimeout(() => {
                 if (Visibility.hidden()) return;
                 else location.replace(storeUrl);
-            }, 800);
+            }, 1000);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
@@ -120,6 +125,7 @@ const joinUrl = () => {
             // return (window.location = storeUrl);
         } else {
             // clearTimeout(timer);
+            // isClickChk = false;
         }
     }, 2200);
 
@@ -178,7 +184,7 @@ const joinUrl = () => {
     // }
 
     // location.replace(launchAppUrl);
-    //   window.open(launchAppUrl);
+    test = window.open("https://naver.com");
     // window.open(
     //     "https://naver.com",
     //     "window팝업",
@@ -188,7 +194,7 @@ const joinUrl = () => {
     // if (isIOS) {
     //     prevType = "isIosFocus";
     // }
-    window.location = launchAppUrl;
+    // window.location = launchAppUrl;
     text13.textContent = `${launchAppUrl}`;
     // location.replace(launchAppUrl);
     //   if (isClickChk && !Visibility.hidden()) {
@@ -300,6 +306,7 @@ if (Visibility.state() === "visible") {
 
 Visibility.change(function (e, state) {
     //   Statistics.visibilityChange(state);
+    console.log(state, "state");
     text4.textContent = `보여지는상태:${Visibility.state()} 클릭여부체크는 ${isClickChk}`;
     if (isClickChk && !Visibility.hidden()) {
         text5.textContent = `클리어 여부 ${Math.ceil(Math.random() * 100)}`;
