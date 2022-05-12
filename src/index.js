@@ -102,9 +102,9 @@ const joinUrl = () => {
     //   }, 3000);
     timer = setTimeout(() => {
         console.log(test, "test");
-        if (test) {
-            alert("aa");
-        }
+        // if (test) {
+        //     alert("aa");
+        // }
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
             // const openAt = new Date();
