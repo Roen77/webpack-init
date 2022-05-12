@@ -100,11 +100,16 @@ const joinUrl = () => {
     timer = setTimeout(() => {
         // text9.textContent = `${opener && opener.closed}`;
         if (isMobileSafari && isClickChk && prevType === "onblur") {
+            const openAt = new Date();
             clearTimeout(timer);
-            timer2 = setTimeout(() => {
+            if (new Date() - openAt < 2500) {
                 if (Visibility.hidden()) return clearTimeout(timer2);
                 else location.replace(storeUrl);
-            }, 3200);
+            }
+            // timer2 = setTimeout(() => {
+            //     if (Visibility.hidden()) return clearTimeout(timer2);
+            //     else location.replace(storeUrl);
+            // }, 3300);
             return;
         }
         if (isClickChk && !Visibility.hidden()) {
