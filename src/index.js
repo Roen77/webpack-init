@@ -45,7 +45,7 @@ let prevType;
 let answer;
 // 앱 스키마 uri
 // const launchAppUrl = "bowling710://m.chilten.com";
-const launchAppUrl = "bowling710://main";
+const launchAppUrl = "bowling710://auth";
 const text = document.querySelector(".text");
 const text2 = document.querySelector(".text2");
 const text3 = document.querySelector(".text3");
