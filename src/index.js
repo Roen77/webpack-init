@@ -111,11 +111,11 @@ const joinUrl = () => {
         if (isClickChk && Visibility.hidden()) {
             return setTimeout(timer);
         }
-        if (new Date() - openAt < 1900) {
+        if (new Date() - openAt < 1300) {
             location.replace(storeUrl);
         }
         isClickChk = false;
-    }, 1700);
+    }, 1000);
 
     location.href = launchAppUrl;
 };
