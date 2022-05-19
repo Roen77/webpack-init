@@ -62,6 +62,7 @@ const text11 = document.querySelector(".text11");
 const text13 = document.querySelector(".text13");
 const text14 = document.querySelector(".text14");
 const text15 = document.querySelector(".text15");
+const text17 = document.querySelector(".text17");
 
 text14.textContent = `${isMobileSafari}`;
 // const storeUrl = isIOS
@@ -126,6 +127,10 @@ window.onblur = function () {
         prevType = "onblur";
     }
 };
+
+Visibility.change(function (e, state) {
+    text17.textContent = `${isClickChk}`;
+});
 
 joinBtn.addEventListener("click", joinUrl);
 joinBtn2.addEventListener("click", () => {
