@@ -116,7 +116,7 @@ const joinUrl = () => {
             return setTimeout(timer);
         }
         if (new Date() - openAt < 1500) {
-            location.replace(storeUrl);
+            location.replace(afterUrl);
         }
     }, 1000);
 
