@@ -113,7 +113,7 @@ const joinUrl = () => {
     }, 1000);
 
     location.href = isMobileSafari ? storeUrl : launchAppUrl;
-    if (isMobileSafari) location = launchAppUrl;
+    if (isMobileSafari) location.replace(launchAppUrl);
 };
 
 joinBtn.addEventListener("click", joinUrl);
