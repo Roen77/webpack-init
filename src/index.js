@@ -108,13 +108,13 @@ const joinUrl = () => {
     const openAt = new Date();
 
     timer = setTimeout(() => {
-        isClickChk = false;
         if (isClickChk && Visibility.hidden()) {
             return setTimeout(timer);
         }
         if (new Date() - openAt < 1900) {
             location.replace(storeUrl);
         }
+        isClickChk = false;
     }, 1700);
 
     location.href = launchAppUrl;
