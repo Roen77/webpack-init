@@ -73,7 +73,9 @@ text14.textContent = `${isMobileSafari}`;
 //     ? "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
 //     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 const storeUrl = isIOS
-    ? "itms-apps://itunes.apple.com/app/id1498707344"
+    ? isMobileSafari
+        ? "itms-apps://itunes.apple.com/app/id1498707344"
+        : "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 // 앱 스키마 uri
@@ -116,6 +118,13 @@ const joinUrl = () => {
     }, 1000);
 
     location.href = launchAppUrl;
+};
+
+// 모바일 사파리에서 앱설치되었을 때 팝업창 오픈 여부 처리
+window.onblur = function () {
+    if (isMobileSafari) {
+        prevType = "onblur";
+    }
 };
 
 joinBtn.addEventListener("click", joinUrl);
