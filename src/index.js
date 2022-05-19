@@ -108,8 +108,8 @@ const joinUrl = () => {
     const openAt = new Date();
 
     timer = setTimeout(() => {
+        isClickChk = false;
         if (isClickChk && Visibility.hidden()) {
-            isClickChk = false;
             return setTimeout(timer);
         }
         if (new Date() - openAt < 1900) {
