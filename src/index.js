@@ -105,7 +105,7 @@ const joinUrl = () => {
         if (new Date() - openAt < 2000) {
             location.replace(storeUrl);
         }
-    }, 1000);
+    }, 1900);
 
     location.href = launchAppUrl;
 };
