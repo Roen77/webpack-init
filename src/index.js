@@ -106,7 +106,7 @@ const joinUrl = () => {
     const openAt = new Date();
 
     timer = setTimeout(() => {
-        if ((isClickChk && Visibility.hidden()) || isMobileSafari) {
+        if (isClickChk && Visibility.hidden()) {
             isClickChk = false;
             return setTimeout(timer);
         }
