@@ -112,10 +112,10 @@ const joinUrl = () => {
             isClickChk = false;
             return setTimeout(timer);
         }
-        if (new Date() - openAt < 1500) {
+        if (new Date() - openAt < 1900) {
             location.replace(storeUrl);
         }
-    }, 1000);
+    }, 1700);
 
     location.href = launchAppUrl;
 };
