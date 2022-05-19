@@ -35,6 +35,8 @@ console.log(`production:${IS_PRODUCTION}`);
 console.log(` svg:${svg}`);
 
 const joinBtn = document.querySelector(".join_btn");
+const joinBtn2 = document.querySelector(".join_btn2");
+const joinBtn3 = document.querySelector(".join_btn3");
 const aBtn1 = document.querySelector(".apple_btn1");
 const aBtn2 = document.querySelector(".apple_btn2");
 const naver = document.querySelector(".naver");
@@ -329,3 +331,9 @@ Visibility.change(function (e, state) {
 });
 
 joinBtn.addEventListener("click", joinUrl);
+joinBtn2.addEventListener("click", () => {
+    window.location = "bowling710://auth/login";
+});
+joinBtn3.addEventListener("click", () => {
+    window.location = "bowling710://rrrr";
+});
