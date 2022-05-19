@@ -48,9 +48,6 @@ let answer;
 // 앱 스키마 uri
 // const launchAppUrl = "bowling710://m.chilten.com";
 const launchAppUrl = "bowling710://auth/login";
-const initAppUrl = isMobileSafari
-    ? "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
-    : "bowling710://auth/login";
 const text = document.querySelector(".text");
 const text2 = document.querySelector(".text2");
 const text3 = document.querySelector(".text3");
@@ -74,11 +71,6 @@ text14.textContent = `${isMobileSafari}`;
 //     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 const storeUrl = isIOS
     ? "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
-    : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
-const afterUrl = isIOS
-    ? isMobileSafari
-        ? "bowling710://auth/login"
-        : "https://apps.apple.com/kr/app/%EC%B9%A0%ED%85%90/id1498707344"
     : "https://play.google.com/store/apps/details?id=com.gameone.bowling710";
 
 // 앱 스키마 uri
@@ -111,16 +103,17 @@ const joinUrl = () => {
     const openAt = new Date();
 
     timer = setTimeout(() => {
-        if (isClickChk && Visibility.hidden()) {
+        if ((isClickChk && Visibility.hidden()) || isMobileSafari) {
             isClickChk = false;
             return setTimeout(timer);
         }
         if (new Date() - openAt < 1500) {
-            location.replace(afterUrl);
+            location.replace(storeUrl);
         }
     }, 1000);
 
-    location.href = initAppUrl;
+    location.href = isMobileSafari ? storeUrl : launchAppUrl;
+    if (isMobileSafari) location = launchAppUrl;
 };
 
 joinBtn.addEventListener("click", joinUrl);
